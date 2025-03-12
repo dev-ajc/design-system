@@ -1,0 +1,161 @@
+/* ==========================================================================
+   SPACING UTILITIES (MARGIN & PADDING)
+========================================================================== */
+
+/*
+TABLE OF CONTENTS:
+
+1. Margin
+    .m-0            - No margin
+    .mt-0           - No top margin
+    .mr-0           - No right margin
+    .mb-0           - No bottom margin
+    .ml-0           - No left margin
+    .mx-0           - No horizontal margin
+    .my-0           - No vertical margin
+    .m-xs           - Extra small margin on all sides
+    .mt-xs          - Extra small top margin
+    .mr-xs          - Extra small right margin
+    .mb-xs          - Extra small bottom margin
+    .ml-xs          - Extra small left margin
+    .mx-xs          - Extra small horizontal margin
+    .my-xs          - Extra small vertical margin
+
+2. Padding
+    .p-0            - No padding
+    .pt-0           - No top padding
+    .pr-0           - No right padding
+    .pb-0           - No bottom padding
+    .pl-0           - No left padding
+    .px-0           - No horizontal padding
+    .py-0           - No vertical padding
+    .p-xs           - Extra small padding on all sides
+    .pt-xs          - Extra small top padding
+    .pr-xs          - Extra small right padding
+    .pb-xs          - Extra small bottom padding
+    .pl-xs          - Extra small left padding
+    .px-xs          - Extra small horizontal padding
+    .py-xs          - Extra small vertical padding
+
+3. Gap
+    .gap-0          - No gap between items
+    .gap-xs         - Extra small gap between items
+    .gap-sm         - Small gap between items
+    .gap-md         - Medium gap between items
+    .gap-lg         - Large gap between items
+    .gap-xl         - Extra large gap between items
+    .gap-2xl        - 2x extra large gap between items
+    .gap-3xl        - 3x extra large gap between items
+
+    .gap-row-0      - No gap between rows
+    .gap-row-xs     - Extra small gap between rows
+    .gap-row-sm     - Small gap between rows
+    .gap-row-md     - Medium gap between rows
+    .gap-row-lg     - Large gap between rows
+    .gap-row-xl     - Extra large gap between rows
+    .gap-row-2xl    - 2x extra large gap between rows
+    .gap-row-3xl    - 3x extra large gap between rows
+
+    .gap-col-0      - No gap between columns
+    .gap-col-xs     - Extra small gap between columns
+    .gap-col-sm     - Small gap between columns
+    .gap-col-md     - Medium gap between columns
+    .gap-col-lg     - Large gap between columns
+    .gap-col-xl     - Extra large gap between columns
+    .gap-col-2xl    - 2x extra large gap between columns
+    .gap-col-3xl    - 3x extra large gap between columns
+
+4. Auto margins
+    .m-auto         - Auto margin on all sides
+    .mt-auto        - Auto margin on top
+    .mr-auto        - Auto margin on right
+    .mb-auto        - Auto margin on bottom
+    .ml-auto        - Auto margin on left
+    .mx-auto        - Auto margin on left and right
+    .my-auto        - Auto margin on top and bottom
+
+5. Auto margins for flexbox alignment
+    .m-auto         - Auto margin on all sides
+    .mt-auto        - Auto margin on top
+    .mr-auto        - Auto margin on right
+    .mb-auto        - Auto margin on bottom
+    .ml-auto        - Auto margin on left
+    .mx-auto        - Auto margin on left and right
+    .my-auto        - Auto margin on top and bottom
+
+*/
+
+
+// Generate spacing utilities for margin and padding
+@each $prop, $abbrev in (margin: m, padding: p) {
+
+    @each $size, $value in (0: 0,
+        xs: $spacing-xs,
+        sm: $spacing-sm,
+        md: $spacing-md,
+        lg: $spacing-lg,
+        xl: $spacing-xl,
+        2xl: $spacing-2xl,
+        3xl: $spacing-3xl ) {
+        .#{$abbrev}-#{$size} {
+            #{$prop}: $value !important;
+        }
+
+        .#{$abbrev}t-#{$size} {
+            #{$prop}-top: $value !important;
+        }
+
+        .#{$abbrev}r-#{$size} {
+            #{$prop}-right: $value !important;
+        }
+
+        .#{$abbrev}b-#{$size} {
+            #{$prop}-bottom: $value !important;
+        }
+
+        .#{$abbrev}l-#{$size} {
+            #{$prop}-left: $value !important;
+        }
+
+        .#{$abbrev}x-#{$size} {
+            #{$prop}-right: $value !important;
+            #{$prop}-left: $value !important;
+        }
+
+        .#{$abbrev}y-#{$size} {
+            #{$prop}-top: $value !important;
+            #{$prop}-bottom: $value !important;
+        }
+    }
+}
+
+// Auto margins for flexbox alignment
+.m-auto {
+    margin: auto !important;
+}
+
+.mt-auto {
+    margin-top: auto !important;
+}
+
+.mr-auto {
+    margin-right: auto !important;
+}
+
+.mb-auto {
+    margin-bottom: auto !important;
+}
+
+.ml-auto {
+    margin-left: auto !important;
+}
+
+.mx-auto {
+    margin-right: auto !important;
+    margin-left: auto !important;
+}
+
+.my-auto {
+    margin-top: auto !important;
+    margin-bottom: auto !important;
+}

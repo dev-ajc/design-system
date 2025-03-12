@@ -1,0 +1,56 @@
+/* ==========================================================================
+   MIXINS
+   ========================================================================== */
+
+// Responsive breakpoint mixin
+@mixin respond-to($breakpoint) {
+    @media (min-width: $breakpoint) {
+      @content;
+    }
+  }
+  
+  // Text truncation
+  @mixin truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  
+  // Flexbox center
+  @mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  // Visually hidden (accessibility)
+  @mixin visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+  
+  // Clearfix
+  @mixin clearfix {
+    &::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+  }
+  
+  // Box shadow
+  @mixin box-shadow($shadow...) {
+    box-shadow: $shadow;
+  }
+  
+  // Transition
+  @mixin transition($property: all, $duration: $transition-base, $timing: $transition-timing-function, $delay: 0s) {
+    transition: $property $duration $timing $delay;
+  }

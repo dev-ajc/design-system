@@ -1,0 +1,118 @@
+/* ==========================================================================
+   GRID
+========================================================================== */
+
+/*
+TABLE OF CONTENTS:
+
+1. Base Grid Classes
+    .grid                  - Base grid container
+    .grid--no-gap         - Remove grid gaps
+    .grid--gap-sm         - Small grid gaps
+    .grid--gap-md         - Medium grid gaps
+    .grid--gap-lg         - Large grid gaps
+    .grid__item           - Grid item (default full width)
+
+2. Small Breakpoint Classes (>= 576px)
+    .grid__item--sm-1     - Span 1 column
+    .grid__item--sm-2     - Span 2 columns
+    .grid__item--sm-3     - Span 3 columns
+    .grid__item--sm-4     - Span 4 columns
+    .grid__item--sm-5     - Span 5 columns
+    .grid__item--sm-6     - Span 6 columns
+    .grid__item--sm-7     - Span 7 columns
+    .grid__item--sm-8     - Span 8 columns
+    .grid__item--sm-9     - Span 9 columns
+    .grid__item--sm-10    - Span 10 columns
+    .grid__item--sm-11    - Span 11 columns
+    .grid__item--sm-12    - Span 12 columns
+
+3. Medium Breakpoint Classes (>= 768px)
+    .grid__item--md-1     - Span 1 column
+    .grid__item--md-2     - Span 2 columns
+    .grid__item--md-3     - Span 3 columns
+    .grid__item--md-4     - Span 4 columns
+    .grid__item--md-5     - Span 5 columns
+    .grid__item--md-6     - Span 6 columns
+    .grid__item--md-7     - Span 7 columns
+    .grid__item--md-8     - Span 8 columns
+    .grid__item--md-9     - Span 9 columns
+    .grid__item--md-10    - Span 10 columns
+    .grid__item--md-11    - Span 11 columns
+    .grid__item--md-12    - Span 12 columns
+
+4. Large Breakpoint Classes (>= 992px)
+    .grid__item--lg-1     - Span 1 column
+    .grid__item--lg-2     - Span 2 columns
+    .grid__item--lg-3     - Span 3 columns
+    .grid__item--lg-4     - Span 4 columns
+    .grid__item--lg-5     - Span 5 columns
+    .grid__item--lg-6     - Span 6 columns
+    .grid__item--lg-7     - Span 7 columns
+    .grid__item--lg-8     - Span 8 columns
+    .grid__item--lg-9     - Span 9 columns
+    .grid__item--lg-10    - Span 10 columns
+    .grid__item--lg-11    - Span 11 columns
+    .grid__item--lg-12    - Span 12 columns
+*/
+
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: $spacing-md;
+
+    &--no-gap { grid-gap: 0; }
+    &--gap-sm { grid-gap: $spacing-sm; }
+    &--gap-md { grid-gap: $spacing-md; }
+    &--gap-lg { grid-gap: $spacing-lg; }
+
+    &__item {
+        grid-column: span 12;
+
+        @include respond-to($breakpoint-sm) {
+            &--sm-1 { grid-column: span 1; }
+            &--sm-2 { grid-column: span 2; }
+            &--sm-3 { grid-column: span 3; }
+            &--sm-4 { grid-column: span 4; }
+            &--sm-5 { grid-column: span 5; }
+            &--sm-6 { grid-column: span 6; }
+            &--sm-7 { grid-column: span 7; }
+            &--sm-8 { grid-column: span 8; }
+            &--sm-9 { grid-column: span 9; }
+            &--sm-10 { grid-column: span 10; }
+            &--sm-11 { grid-column: span 11; }
+            &--sm-12 { grid-column: span 12; }
+        }
+
+        @include respond-to($breakpoint-md) {
+            &--md-1 { grid-column: span 1; }
+            &--md-2 { grid-column: span 2; }
+            &--md-3 { grid-column: span 3; }
+            &--md-4 { grid-column: span 4; }
+            &--md-5 { grid-column: span 5; }
+            &--md-6 { grid-column: span 6; }
+            &--md-7 { grid-column: span 7; }
+            &--md-8 { grid-column: span 8; }
+            &--md-9 { grid-column: span 9; }
+            &--md-10 { grid-column: span 10; }
+            &--md-11 { grid-column: span 11; }
+            &--md-12 { grid-column: span 12; }
+        }
+
+        @include respond-to($breakpoint-lg) {
+            &--lg-1 { grid-column: span 1; }
+            &--lg-2 { grid-column: span 2; }
+            &--lg-3 { grid-column: span 3; }
+            &--lg-4 { grid-column: span 4; }
+            &--lg-5 { grid-column: span 5; }
+            &--lg-6 { grid-column: span 6; }
+            &--lg-7 { grid-column: span 7; }
+            &--lg-8 { grid-column: span 8; }
+            &--lg-9 { grid-column: span 9; }
+            &--lg-10 { grid-column: span 10; }
+            &--lg-11 { grid-column: span 11; }
+            &--lg-12 { grid-column: span 12; }
+        }
+    }
+}

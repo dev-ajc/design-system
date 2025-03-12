@@ -1,0 +1,67 @@
+/* ==========================================================================
+   CARD
+========================================================================== */
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: $color-white;
+    background-clip: border-box;
+    border: 1px solid $color-medium-gray;
+    border-radius: $border-radius-md;
+    @include box-shadow($shadow-sm);
+    overflow: hidden;
+
+    &__header {
+        padding: $spacing-md;
+        margin-bottom: 0;
+        background-color: $color-light-gray;
+        border-bottom: 1px solid $color-medium-gray;
+    }
+
+    &__body {
+        flex: 1 1 auto;
+        padding: $spacing-md;
+    }
+
+    &__title {
+        margin-top: 0;
+        margin-bottom: $spacing-sm;
+        font-size: $font-size-lg;
+    }
+
+    &__text {
+        margin-top: 0;
+        margin-bottom: $spacing-md;
+    }
+
+    &__footer {
+        padding: $spacing-md;
+        background-color: $color-light-gray;
+        border-top: 1px solid $color-medium-gray;
+    }
+
+    /* Card Variants */
+    &--primary {
+        border-color: $color-primary;
+
+        .card__header {
+            background-color: $color-primary;
+            color: $color-white;
+            border-color: $color-primary;
+        }
+    }
+
+    &--secondary {
+        border-color: $color-secondary;
+
+        .card__header {
+            background-color: $color-secondary;
+            color: $color-white;
+            border-color: $color-secondary;
+        }
+    }
+}

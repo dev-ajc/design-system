@@ -1,0 +1,408 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Design System/Utility Classes" />
+
+# Utility Classes
+
+&nbsp;
+
+## Spacing Utilities
+
+Spacing utilities control margins and padding to create consistent spacing between and within elements.
+
+### Margin
+
+Margin utilities use the format `.m{side}-{size}` where:
+- `m` stands for margin
+  - `{side}` can be:
+    - `t` (top)
+    - `r` (right)
+    - `b` (bottom)
+    - `l` (left)
+    - `x` (horizontal)
+    - `y` (vertical)
+    - omitted for all sides
+  - `{size}` represents predefined spacing values:
+    - `0`
+    - `xs` (4px)
+    - `sm` (8px)
+    - `md` (16px)
+    - `lg` (24px)
+    - `xl` (32px)
+    - `2xl` (48px)
+    - `3xl` (64px)
+
+```html
+<div class="m-md">All-sides margin (16px)</div>
+<div class="mt-md">Top margin (16px)</div>
+<div class="mr-md">Right margin (16px)</div>
+<div class="mb-md">Bottom margin (16px)</div>
+<div class="ml-md">Left margin (16px)</div>
+<div class="mx-md">Horizontal margins (16px)</div>
+<div class="my-md">Vertical margins (16px)</div>
+<div class="m-auto">Auto margin (for centering)</div>
+```
+
+### Padding
+
+Padding utilities follow the same pattern as margin utilities, but with `p` instead of `m`:
+
+```html
+<div class="p-md">All-sides padding (16px)</div>
+<div class="pt-md">Top padding (16px)</div>
+<div class="pr-md">Right padding (16px)</div>
+<div class="pb-md">Bottom padding (16px)</div>
+<div class="pl-md">Left padding (16px)</div>
+<div class="px-md">Horizontal padding (16px)</div>
+<div class="py-md">Vertical padding (16px)</div>
+```
+
+## Display Utilities
+
+Display utilities control how elements are displayed in the document flow.
+
+```html
+<div class="d-none">Hidden (display: none)</div>
+<div class="d-inline">Display as inline</div>
+<div class="d-inline-block">Display as inline-block</div>
+<div class="d-block">Display as block</div>
+<div class="d-flex">Display as flex container</div>
+<div class="d-grid">Display as grid container</div>
+```
+
+### Responsive Display
+
+Each display utility also has responsive variants:
+
+```html
+<div class="d-block d-md-none">Visible on small screens, hidden on medium and up</div>
+<div class="d-none d-lg-block">Hidden by default, visible on large screens</div>
+```
+
+## Flex Utilities
+
+Flex utilities provide control over flex container and item behavior.
+
+### Flex Direction
+
+```html
+<div class="d-flex flex-row">Row (default)</div>
+<div class="d-flex flex-column">Column</div>
+<div class="d-flex flex-row-reverse">Row reversed</div>
+<div class="d-flex flex-column-reverse">Column reversed</div>
+```
+
+### Flex Wrap
+
+```html
+<div class="d-flex flex-wrap">Wrap items</div>
+<div class="d-flex flex-nowrap">Don't wrap items</div>
+<div class="d-flex flex-wrap-reverse">Wrap items in reverse</div>
+```
+
+### Justify Content
+
+```html
+<div class="d-flex justify-content-start">Align items to start</div>
+<div class="d-flex justify-content-center">Center items</div>
+<div class="d-flex justify-content-end">Align items to end</div>
+<div class="d-flex justify-content-between">Space between items</div>
+<div class="d-flex justify-content-around">Space around items</div>
+<div class="d-flex justify-content-evenly">Space evenly between items</div>
+```
+
+### Align Items
+
+```html
+<div class="d-flex align-items-start">Align items to start</div>
+<div class="d-flex align-items-center">Center items</div>
+<div class="d-flex align-items-end">Align items to end</div>
+<div class="d-flex align-items-stretch">Stretch items</div>
+<div class="d-flex align-items-baseline">Align items to baseline</div>
+```
+
+### Gap
+
+Control spacing between flex and grid items:
+
+```html
+<div class="d-flex gap-md">Medium gap (16px) between items</div>
+<div class="d-flex gap-lg">Large gap (24px) between items</div>
+<div class="d-flex gap-x-md">Medium horizontal gap only</div>
+<div class="d-flex gap-y-md">Medium vertical gap only</div>
+```
+
+## Width & Height Utilities
+
+Control the width and height of elements:
+
+### Width Utilities
+
+```html
+<div class="w-full">Full width (100%)</div>
+<div class="w-auto">Auto width</div>
+<div class="w-1/2">50% width</div>
+<div class="w-1/3">33.33% width</div>
+<div class="w-2/3">66.67% width</div>
+<div class="w-1/4">25% width</div>
+<div class="w-3/4">75% width</div>
+<div class="w-64">64px width</div>
+<div class="w-96">96px width</div>
+```
+
+### Max Width Utilities
+
+```html
+<div class="max-w-xs">Max width 320px</div>
+<div class="max-w-sm">Max width 576px</div>
+<div class="max-w-md">Max width 768px</div>
+<div class="max-w-lg">Max width 992px</div>
+<div class="max-w-xl">Max width 1200px</div>
+<div class="max-w-none">No max width</div>
+<div class="max-w-full">Max width 100%</div>
+<div class="max-w-prose">Max width for comfortable reading (65ch)</div>
+```
+
+### Height Utilities
+
+```html
+<div class="h-full">Full height (100%)</div>
+<div class="h-screen">Viewport height (100vh)</div>
+<div class="h-auto">Auto height</div>
+<div class="h-64">64px height</div>
+<div class="h-1/2">50% height</div>
+```
+
+## Text Utilities
+
+Control text appearance and alignment:
+
+### Text Alignment
+
+```html
+<p class="text-left">Left-aligned text</p>
+<p class="text-center">Center-aligned text</p>
+<p class="text-right">Right-aligned text</p>
+<p class="text-justify">Justified text</p>
+```
+
+### Text Color
+
+```html
+<p class="text-primary">Primary color text</p>
+<p class="text-secondary">Secondary color text</p>
+<p class="text-danger">Danger color text</p>
+<p class="text-success">Success color text</p>
+<p class="text-warning">Warning color text</p>
+<p class="text-info">Info color text</p>
+<p class="text-black">Black text</p>
+<p class="text-dark-gray">Dark gray text</p>
+<p class="text-medium-gray">Medium gray text</p>
+<p class="text-light-gray">Light gray text</p>
+<p class="text-white">White text</p>
+<p class="text-muted">Muted text</p>
+```
+
+### Text Transformation
+
+```html
+<p class="text-uppercase">UPPERCASE TEXT</p>
+<p class="text-lowercase">lowercase text</p>
+<p class="text-capitalize">Capitalized Text</p>
+```
+
+### Font Weight
+
+```html
+<p class="font-weight-light">Light text (300)</p>
+<p class="font-weight-normal">Normal text (400)</p>
+<p class="font-weight-medium">Medium text (500)</p>
+<p class="font-weight-semibold">Semibold text (600)</p>
+<p class="font-weight-bold">Bold text (700)</p>
+```
+
+### Font Size
+
+```html
+<p class="text-xs">Extra small text (12px)</p>
+<p class="text-sm">Small text (14px)</p>
+<p class="text-md">Medium text (16px)</p>
+<p class="text-lg">Large text (18px)</p>
+<p class="text-xl">Extra large text (20px)</p>
+<p class="text-2xl">2x Extra large text (24px)</p>
+<p class="text-3xl">3x Extra large text (30px)</p>
+<p class="text-4xl">4x Extra large text (36px)</p>
+```
+
+### Text Wrapping
+
+```html
+<p class="text-nowrap">Text that doesn't wrap</p>
+<p class="text-truncate">Text that truncates with an ellipsis if it's too long...</p>
+<p class="text-break">Text that breaks words if necessary to prevent overflow</p>
+```
+
+## Background Colors
+
+```html
+<div class="bg-primary">Primary background</div>
+<div class="bg-secondary">Secondary background</div>
+<div class="bg-success">Success background</div>
+<div class="bg-danger">Danger background</div>
+<div class="bg-warning">Warning background</div>
+<div class="bg-info">Info background</div>
+<div class="bg-black">Black background</div>
+<div class="bg-dark-gray">Dark gray background</div>
+<div class="bg-medium-gray">Medium gray background</div>
+<div class="bg-light-gray">Light gray background</div>
+<div class="bg-white">White background</div>
+<div class="bg-transparent">Transparent background</div>
+```
+
+## Border Utilities
+
+Control borders, radius, and styles:
+
+### Border
+
+```html
+<div class="border">Standard border (all sides)</div>
+<div class="border-top">Top border only</div>
+<div class="border-right">Right border only</div>
+<div class="border-bottom">Bottom border only</div>
+<div class="border-left">Left border only</div>
+<div class="border-0">No border</div>
+```
+
+### Border Color
+
+```html
+<div class="border border-primary">Primary color border</div>
+<div class="border border-secondary">Secondary color border</div>
+<div class="border border-success">Success color border</div>
+<div class="border border-danger">Danger color border</div>
+<div class="border border-warning">Warning color border</div>
+<div class="border border-info">Info color border</div>
+```
+
+### Border Width
+
+```html
+<div class="border border-width-1">1px border width</div>
+<div class="border border-width-2">2px border width</div>
+<div class="border border-width-3">3px border width</div>
+<div class="border border-width-4">4px border width</div>
+<div class="border border-width-5">5px border width</div>
+```
+
+### Border Style
+
+```html
+<div class="border border-solid">Solid border</div>
+<div class="border border-dashed">Dashed border</div>
+<div class="border border-dotted">Dotted border</div>
+```
+
+### Border Radius
+
+```html
+<div class="rounded">Default radius (4px)</div>
+<div class="rounded-sm">Small radius (2px)</div>
+<div class="rounded-md">Medium radius (4px)</div>
+<div class="rounded-lg">Large radius (8px)</div>
+<div class="rounded-xl">Extra large radius (16px)</div>
+<div class="rounded-circle">Circle radius (50%)</div>
+<div class="rounded-pill">Pill shape radius</div>
+<div class="rounded-0">No radius</div>
+```
+
+## Position Utilities
+
+```html
+<div class="position-static">Static position</div>
+<div class="position-relative">Relative position</div>
+<div class="position-absolute">Absolute position</div>
+<div class="position-fixed">Fixed position</div>
+<div class="position-sticky">Sticky position</div>
+```
+
+## Overflow Utilities
+
+Control how content overflows its container:
+
+```html
+<div class="overflow-auto">Auto overflow (scrollbars when needed)</div>
+<div class="overflow-hidden">Hidden overflow (clips content)</div>
+<div class="overflow-visible">Visible overflow (content extends outside)</div>
+<div class="overflow-scroll">Scrollable overflow (always shows scrollbars)</div>
+<div class="overflow-x-auto">Horizontal auto overflow</div>
+<div class="overflow-y-auto">Vertical auto overflow</div>
+```
+
+## Aspect Ratio Utilities
+
+Maintain consistent aspect ratios for responsive media:
+
+```html
+<div class="aspect aspect-16:9">
+  <img src="..." alt="16:9 aspect ratio" />
+</div>
+
+<div class="aspect aspect-4:3">
+  <img src="..." alt="4:3 aspect ratio" />
+</div>
+
+<div class="aspect aspect-square">
+  <img src="..." alt="1:1 aspect ratio" />
+</div>
+
+<div class="aspect aspect-video">
+  <iframe src="..." allowfullscreen></iframe>
+</div>
+```
+
+## Responsive Utility Patterns
+
+Most utility classes can be applied at specific breakpoints using the pattern:
+`{property}-{breakpoint}-{value}`
+
+```html
+<!-- Different text alignment at different screen sizes -->
+<p class="text-center text-md-left text-lg-right">
+  Centered on small screens, left-aligned on medium screens, right-aligned on large screens
+</p>
+
+<!-- Different width at different screen sizes -->
+<div class="w-full w-md-1/2 w-lg-1/3">
+  Full width on small screens, half width on medium screens, one-third width on large screens
+</div>
+
+<!-- Show/hide based on screen size -->
+<div class="d-none d-md-block">Hidden on small screens, visible on medium and up</div>
+<div class="d-block d-lg-none">Visible on small and medium screens, hidden on large screens</div>
+```
+
+## Using Multiple Utility Classes Together
+
+Utility classes can be combined to create complex layouts without writing custom CSS:
+
+```html
+<div class="d-flex flex-column flex-md-row justify-content-between align-items-center p-md gap-lg bg-light-gray rounded">
+  <div class="w-full w-md-1/2 mb-md mb-md-0">
+    <h2 class="text-2xl font-weight-bold mb-sm">Left Content</h2>
+    <p class="text-md text-dark-gray">Some descriptive text here.</p>
+  </div>
+  <div class="w-full w-md-1/2">
+    <div class="border border-primary rounded p-md bg-white">
+      <h3 class="text-xl text-primary mb-sm">Right Content</h3>
+      <p class="text-sm">Additional content here.</p>
+    </div>
+  </div>
+</div>
+```
+
+This example creates a responsive card layout that:
+- Stacks vertically on small screens and horizontally on medium screens and up
+- Has justified space between the two sections
+- Includes appropriate spacing, colors, and typography
+- All without writing a single line of custom CSS

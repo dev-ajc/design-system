@@ -1,0 +1,124 @@
+/* ==========================================================================
+   BORDER UTILITIES
+========================================================================== */
+
+/*
+TABLE OF CONTENTS:
+
+1. Border
+    .border              - Standard border (1px solid)
+    .border-top          - Top border only
+    .border-right        - Right border only
+    .border-bottom       - Bottom border only
+    .border-left         - Left border only
+    .border-0            - Remove all borders
+    .border-top-0        - Remove top border
+    .border-right-0      - Remove right border
+    .border-bottom-0     - Remove bottom border
+    .border-left-0       - Remove left border
+
+2. Border Style
+    .border-solid        - Solid border style
+    .border-dashed       - Dashed border style
+    .border-dotted       - Dotted border style
+
+3. Border Width
+    .border-width-1      - 1px border width
+    .border-width-2      - 2px border width
+    .border-width-3      - 3px border width
+    .border-width-4      - 4px border width
+    .border-width-5      - 5px border width
+
+4. Border Color
+    .border-primary      - Primary color border
+    .border-secondary    - Secondary color border
+    .border-tertiary     - Tertiary color border
+    .border-success      - Success color border
+    .border-danger       - Danger color border
+    .border-warning      - Warning color border
+    .border-info         - Info color border
+    .border-black        - Black border
+    .border-dark-gray    - Dark gray border
+    .border-medium-gray  - Medium gray border
+    .border-light-gray   - Light gray border
+    .border-white        - White border
+
+5. Border Radius
+    .rounded            - Standard border radius
+    .rounded-sm         - Small border radius
+    .rounded-md         - Medium border radius
+    .rounded-lg         - Large border radius
+    .rounded-xl         - Extra large border radius
+    .rounded-top        - Rounded top corners
+    .rounded-right      - Rounded right corners
+    .rounded-bottom     - Rounded bottom corners
+    .rounded-left       - Rounded left corners
+    .rounded-circle     - Circular border radius
+    .rounded-pill       - Pill-shaped border radius
+    .rounded-0          - No border radius
+*/
+
+
+// Border
+.border { border: 1px solid $color-medium-gray !important; }
+.border-top { border-top: 1px solid $color-medium-gray !important; }
+.border-right { border-right: 1px solid $color-medium-gray !important; }
+.border-bottom { border-bottom: 1px solid $color-medium-gray !important; }
+.border-left { border-left: 1px solid $color-medium-gray !important; }
+.border-0 { border: 0 !important; }
+.border-top-0 { border-top: 0 !important; }
+.border-right-0 { border-right: 0 !important; }
+.border-bottom-0 { border-bottom: 0 !important; }
+.border-left-0 { border-left: 0 !important; }
+
+// Border style
+.border-solid { border-style: solid !important; }
+.border-dashed { border-style: dashed !important; }
+.border-dotted { border-style: dotted !important; }
+
+// Border width
+.border-width-1 { border-width: 1px !important; }
+.border-width-2 { border-width: 2px !important; }
+.border-width-3 { border-width: 3px !important; }
+.border-width-4 { border-width: 4px !important; }
+.border-width-5 { border-width: 5px !important; }
+
+// Border color
+.border-primary { border-color: $color-primary !important; }
+.border-secondary { border-color: $color-secondary !important; }
+.border-tertiary { border-color: $color-tertiary !important; }
+.border-success { border-color: $color-success !important; }
+.border-danger { border-color: $color-danger !important; }
+.border-warning { border-color: $color-warning !important; }
+.border-info { border-color: $color-info !important; }
+.border-black { border-color: $color-black !important; }
+.border-dark-gray { border-color: $color-dark-gray !important; }
+.border-medium-gray { border-color: $color-medium-gray !important; }
+.border-light-gray { border-color: $color-light-gray !important; }
+.border-white { border-color: $color-white !important; }
+
+// Border radius
+.rounded { border-radius: $border-radius-md !important; }
+.rounded-sm { border-radius: $border-radius-sm !important; }
+.rounded-md { border-radius: $border-radius-md !important; }
+.rounded-lg { border-radius: $border-radius-lg !important; }
+.rounded-xl { border-radius: $border-radius-xl !important; }
+.rounded-top {
+    border-top-left-radius: $border-radius-md !important;
+    border-top-right-radius: $border-radius-md !important;
+}
+.rounded-right {
+    border-top-right-radius: $border-radius-md !important;
+    border-bottom-right-radius: $border-radius-md !important;
+}
+.rounded-bottom {
+    border-bottom-right-radius: $border-radius-md !important;
+    border-bottom-left-radius: $border-radius-md !important;
+}
+.rounded-left {
+    border-top-left-radius: $border-radius-md !important;
+    border-bottom-left-radius: $border-radius-md !important;
+}
+.rounded-circle { border-radius: 50% !important; }
+.rounded-0 { border-radius: 0 !important; }
+.rounded-pill { border-radius: $border-radius-full !important; }

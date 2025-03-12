@@ -1,0 +1,32 @@
+.Accordion {
+    border: 1px solid $color-medium-gray;
+    border-radius: 4px;
+    margin-bottom: 8px;
+}
+
+.Accordion__content-wrapper {
+    overflow: hidden;
+    transition: height 0.3s ease-out;
+}
+
+.Accordion__header {
+    width: 100%;
+    padding: $spacing-md;
+    background: $color-transparent;
+    text-align: left;
+    border: 0 none;
+    // border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    // align-items: center;
+}
+
+.Accordion__content {
+    padding: $spacing-md;
+    border-top: 1px solid $color-medium-gray;
+}
+
+.Accordion__icon {
+    font-size: $font-size-lg;
+} 

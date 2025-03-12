@@ -1,0 +1,248 @@
+/* ==========================================================================
+   TABLE
+========================================================================== */
+
+/*
+TABLE OF CONTENTS:
+
+1. Base Table
+    .table               - Base table with standard styling
+    
+2. Table Variants
+    .table--striped      - Alternating row background colors
+    .table--bordered     - Full borders around all cells
+    .table--borderless   - No borders at all
+    .table--hover        - Highlight rows on hover
+    .table--sm           - Small compact table
+    .table--lg           - Large spacious table
+    
+3. Table Elements
+    .table__caption      - Table caption
+    .table__head         - Table header section
+    .table__body         - Table body section
+    .table__foot         - Table footer section
+    .table__row          - Table row
+    .table__cell         - Table cell (td)
+    .table__header       - Table header cell (th)
+    
+4. Table Cell Alignments
+    .table__cell--start  - Left-aligned cell content
+    .table__cell--center - Center-aligned cell content
+    .table__cell--end    - Right-aligned cell content
+    
+5. Table Responsive Wrapper
+    .table-responsive    - Makes tables scroll horizontally on small screens
+*/
+
+.table {
+    width: 100%;
+    margin-bottom: $spacing-md;
+    color: $color-black;
+    border-collapse: collapse;
+    
+    &__caption {
+        padding: $spacing-sm;
+        caption-side: top;
+        text-align: left;
+        font-style: italic;
+        color: $color-dark-gray;
+        border-top: 1px solid $color-medium-gray;
+        border-right: 1px solid $color-medium-gray;
+        border-left: 1px solid $color-medium-gray;
+    }
+    
+    &__header {
+        padding: $spacing-sm;
+        text-align: left;
+        border-bottom: 2px solid $color-medium-gray;
+        font-weight: $font-weight-bold;
+        background-color: $color-light-gray;
+        vertical-align: bottom;
+    }
+    
+    &__cell {
+        padding: $spacing-sm;
+        border-top: 1px solid $color-medium-gray;
+        border-bottom: 1px solid $color-medium-gray;
+        vertical-align: top;
+    }
+    
+    &__row {
+        &:last-child {
+            .table__cell {
+                border-bottom: 2px solid $color-medium-gray;
+            }
+        }
+    }
+    
+    &__foot {
+        .table__cell,
+        .table__header {
+            border-top: 2px solid $color-medium-gray;
+            border-bottom: none;
+            font-weight: $font-weight-semibold;
+        }
+    }
+    
+    // Table Cell Alignments
+    &__cell,
+    &__header {
+        &--start {
+            text-align: left;
+        }
+        
+        &--center {
+            text-align: center;
+        }
+        
+        &--end {
+            text-align: right;
+        }
+    }
+    
+    // Table Variants
+    &--striped {
+        .table__body {
+            .table__row:nth-child(odd) {
+                background-color: rgba($color-light-gray, 0.5);
+            }
+        }
+    }
+    
+    &--bordered {
+        border: 1px solid $color-medium-gray;
+        
+        .table__header,
+        .table__cell {
+            border: 1px solid $color-medium-gray;
+        }
+    }
+    
+    &--borderless {
+        .table__header,
+        .table__cell {
+            border: none;
+        }
+    }
+    
+    &--hover {
+        .table__body {
+            .table__row:hover {
+                background-color: rgba($color-light-gray, 0.75);
+            }
+        }
+    }
+    
+    &--sm {
+        .table__header,
+        .table__cell {
+            padding: $spacing-xs;
+        }
+    }
+    
+    &--lg {
+        .table__header,
+        .table__cell {
+            padding: $spacing-md;
+        }
+    }
+    
+    // Support for table__head, table__body, and table__foot elements
+    // for semantic HTML structure
+    thead,
+    &__head {
+        .table__header,
+        th {
+            vertical-align: bottom;
+            border-bottom: 2px solid $color-medium-gray;
+            font-weight: $font-weight-bold;
+            background-color: $color-light-gray;
+        }
+    }
+    
+    tbody,
+    &__body {
+        .table__row:last-child {
+            .table__cell,
+            td {
+                border-bottom: 2px solid $color-medium-gray;
+            }
+        }
+    }
+    
+    tfoot,
+    &__foot {
+        .table__header,
+        .table__cell,
+        th,
+        td {
+            border-top: 2px solid $color-medium-gray;
+            border-bottom: none;
+            font-weight: $font-weight-semibold;
+        }
+    }
+}
+
+// Contextual row colors
+.table__row {
+    &--success {
+        background-color: lighten($color-success, 45%);
+    }
+    
+    &--danger {
+        background-color: lighten($color-danger, 45%);
+    }
+    
+    &--warning {
+        background-color: lighten($color-warning, 45%);
+    }
+    
+    &--info {
+        background-color: lighten($color-info, 45%);
+    }
+}
+
+// Responsive table wrapper
+.table-responsive {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    
+    // Remove extra margin when nested in a card or other container
+    .table {
+        margin-bottom: 0;
+    }
+    
+    // Responsive breakdown at different screen sizes
+    @each $breakpoint, $width in (
+        sm: $breakpoint-sm,
+        md: $breakpoint-md,
+        lg: $breakpoint-lg,
+        xl: $breakpoint-xl
+    ) {
+        &-#{$breakpoint} {
+            @include respond-to($width) {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+            
+            @media (max-width: $width - 1px) {
+                display: block;
+                width: 100%;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                
+                .table {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+}
+
+// In cases where you might use a <table> without the .table class
+// This ensures consistent styling for all tables if needed
+table:not([class]) {
+    @extend .table;
+}

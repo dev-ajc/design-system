@@ -1,0 +1,172 @@
+/* ==========================================================================
+   FLEX & GAP UTILITIES
+========================================================================== */
+
+/*
+TABLE OF CONTENTS:
+
+1. Flex Direction
+    .flex-row               - Row direction (default)
+    .flex-column            - Column direction
+    .flex-row-reverse       - Row direction reversed
+    .flex-column-reverse    - Column direction reversed
+    
+    Responsive variants:
+    .flex-{breakpoint}-row            - Row direction at specific breakpoint
+    .flex-{breakpoint}-column         - Column direction at specific breakpoint
+    .flex-{breakpoint}-row-reverse    - Row direction reversed at specific breakpoint
+    .flex-{breakpoint}-column-reverse - Column direction reversed at specific breakpoint
+
+2. Flex Wrap
+    .flex-wrap              - Wrap items
+    .flex-nowrap            - Don't wrap items
+    .flex-wrap-reverse      - Wrap items in reverse
+
+3. Justify Content
+    .justify-content-start    - Align items to start
+    .justify-content-center   - Center items
+    .justify-content-end      - Align items to end
+    .justify-content-between  - Space between items
+    .justify-content-around   - Space around items
+    .justify-content-evenly   - Space evenly between items
+
+4. Align Items & Self
+    .align-items-start      - Align items to start
+    .align-items-center     - Center items
+    .align-items-end        - Align items to end
+    .align-items-stretch    - Stretch items
+    .align-items-baseline   - Align items to baseline
+    
+    .align-self-*           - Same options for individual items
+
+5. Align Content
+    .align-content-*        - Various alignment options for multi-line flex containers
+
+6. Flex Properties
+    .flex-fill              - Make item grow and shrink as needed
+    .flex-grow-*            - Grow factor
+    .flex-shrink-*          - Shrink factor
+
+7. Order
+    .order-first            - Order -1 (comes first)
+    .order-last             - Order 999 (comes last)
+    .order-0 through order-5 - Specific order values
+
+8. Gap Utilities
+    Base Gaps:
+    .gap-0     - No gap (0px)
+    .gap-xs    - Extra small gap (4px)
+    .gap-sm    - Small gap (8px)
+    .gap-md    - Medium gap (16px)
+    .gap-lg    - Large gap (24px)
+    .gap-xl    - Extra large gap (32px)
+    .gap-2xl   - 2x Extra large gap (48px)
+    .gap-3xl   - 3x Extra large gap (64px)
+
+    Horizontal Gaps:
+    .gap-x-0   - No horizontal gap
+    .gap-x-xs  - Extra small horizontal gap
+    [... continues through gap-x-3xl]
+
+    Vertical Gaps:
+    .gap-y-0   - No vertical gap
+    .gap-y-xs  - Extra small vertical gap
+    [... continues through gap-y-3xl]
+*/
+
+
+// Flex Direction
+.flex-row { flex-direction: row !important; }
+.flex-column { flex-direction: column !important; }
+.flex-row-reverse { flex-direction: row-reverse !important; }
+.flex-column-reverse { flex-direction: column-reverse !important; }
+
+// Responsive Flex Direction
+@each $breakpoint, $width in (
+    sm: $breakpoint-sm,
+    md: $breakpoint-md,
+    lg: $breakpoint-lg,
+    xl: $breakpoint-xl,
+    2xl: $breakpoint-2xl
+) {
+    @include respond-to($width) {
+        .flex-#{$breakpoint}-row { flex-direction: row !important; }
+        .flex-#{$breakpoint}-column { flex-direction: column !important; }
+        .flex-#{$breakpoint}-row-reverse { flex-direction: row-reverse !important; }
+        .flex-#{$breakpoint}-column-reverse { flex-direction: column-reverse !important; }
+    }
+}
+
+// Flex Wrap
+.flex-wrap { flex-wrap: wrap !important; }
+.flex-nowrap { flex-wrap: nowrap !important; }
+.flex-wrap-reverse { flex-wrap: wrap-reverse !important; }
+
+// Justify Content
+.justify-content-start { justify-content: flex-start !important; }
+.justify-content-center { justify-content: center !important; }
+.justify-content-end { justify-content: flex-end !important; }
+.justify-content-between { justify-content: space-between !important; }
+.justify-content-around { justify-content: space-around !important; }
+.justify-content-evenly { justify-content: space-evenly !important; }
+
+// Align Items
+.align-items-start { align-items: flex-start !important; }
+.align-items-center { align-items: center !important; }
+.align-items-end { align-items: flex-end !important; }
+.align-items-stretch { align-items: stretch !important; }
+.align-items-baseline { align-items: baseline !important; }
+
+// Align Self
+.align-self-start { align-self: flex-start !important; }
+.align-self-center { align-self: center !important; }
+.align-self-end { align-self: flex-end !important; }
+.align-self-stretch { align-self: stretch !important; }
+.align-self-baseline { align-self: baseline !important; }
+
+// Align Content
+.align-content-start { align-content: flex-start !important; }
+.align-content-center { align-content: center !important; }
+.align-content-end { align-content: flex-end !important; }
+.align-content-between { align-content: space-between !important; }
+.align-content-around { align-content: space-around !important; }
+.align-content-stretch { align-content: stretch !important; }
+
+// Flex
+.flex-fill { flex: 1 1 auto !important; }
+.flex-grow-0 { flex-grow: 0 !important; }
+.flex-grow-1 { flex-grow: 1 !important; }
+.flex-shrink-0 { flex-shrink: 0 !important; }
+.flex-shrink-1 { flex-shrink: 1 !important; }
+
+// Order
+.order-first { order: -1 !important; }
+.order-last { order: 999 !important; }
+.order-0 { order: 0 !important; }
+.order-1 { order: 1 !important; }
+.order-2 { order: 2 !important; }
+.order-3 { order: 3 !important; }
+.order-4 { order: 4 !important; }
+.order-5 { order: 5 !important; }
+
+// Gap
+@each $size, $value in (0: 0,
+    xs: $spacing-xs,
+    sm: $spacing-sm,
+    md: $spacing-md,
+    lg: $spacing-lg,
+    xl: $spacing-xl,
+    2xl: $spacing-2xl,
+    3xl: $spacing-3xl) {
+    .gap-#{$size} {
+        gap: $value !important;
+    }
+    
+    .gap-x-#{$size} {
+        column-gap: $value !important;
+    }
+    
+    .gap-y-#{$size} {
+        row-gap: $value !important;
+    }
+}

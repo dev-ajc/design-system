@@ -1,0 +1,57 @@
+/* ==========================================================================
+   FUNCTIONS
+   ========================================================================== */
+
+// Convert px to rem
+@function rem($pixels, $context: $font-size-base) {
+    @return ($pixels / $context) * 1rem;
+}
+
+// Get color value from map
+@function color($key) {
+    @if variable-exists($key) {
+        @return var($key);
+    }
+
+    @return null;
+}
+
+// Get spacing value
+@function spacing($key) {
+    $spacing-map: (
+        'xs': $spacing-xs,
+        'sm': $spacing-sm,
+        'md': $spacing-md,
+        'lg': $spacing-lg,
+        'xl': $spacing-xl,
+        '2xl': $spacing-2xl,
+        '3xl': $spacing-3xl,
+        '4xl': $spacing-4xl,
+        '5xl': $spacing-5xl
+    );
+
+@if map-has-key($spacing-map, $key) {
+    @return map-get($spacing-map, $key);
+}
+
+@return $spacing-base;
+}
+
+// Z-index function
+@function z-index($key) {
+    $z-index-map: (
+        'dropdown': $z-index-dropdown,
+        'sticky': $z-index-sticky,
+        'fixed': $z-index-fixed,
+        'modal-backdrop': $z-index-modal-backdrop,
+        'modal': $z-index-modal,
+        'popover': $z-index-popover,
+        'tooltip': $z-index-tooltip
+    );
+
+@if map-has-key($z-index-map, $key) {
+    @return map-get($z-index-map, $key);
+}
+
+@return 0;
+}

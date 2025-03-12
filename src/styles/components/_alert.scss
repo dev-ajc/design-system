@@ -1,0 +1,52 @@
+/* ==========================================================================
+   ALERT
+========================================================================== */
+
+.alert {
+    position: relative;
+    padding: $spacing-md;
+    margin-bottom: $spacing-md;
+    border: 1px solid transparent;
+    border-radius: $border-radius-md;
+
+    &--success {
+        color: darken($color-success, 30%);
+        background-color: lighten($color-success, 45%);
+        border-color: lighten($color-success, 35%);
+    }
+
+    &--warning {
+        color: darken($color-warning, 30%);
+        background-color: lighten($color-warning, 45%);
+        border-color: lighten($color-warning, 35%);
+    }
+
+    &--danger {
+        color: darken($color-danger, 30%);
+        background-color: lighten($color-danger, 45%);
+        border-color: lighten($color-danger, 35%);
+    }
+
+    &--info {
+        color: darken($color-info, 30%);
+        background-color: lighten($color-info, 45%);
+        border-color: lighten($color-info, 35%);
+    }
+
+    &__heading {
+        color: inherit;
+        margin-top: 0;
+        margin-bottom: $spacing-sm;
+    }
+
+    &__close {
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: $spacing-sm;
+        color: inherit;
+        background: transparent;
+        border: 0;
+        cursor: pointer;
+    }
+}

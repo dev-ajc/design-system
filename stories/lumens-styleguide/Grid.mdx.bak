@@ -1,0 +1,112 @@
+import { Meta } from "@storybook/blocks";
+import TypographyShowcase from '../helpers/TypographyShowcase';
+import '../helpers/TypographyShowcase.scss';
+
+<Meta title="Styleguide/Grid" />
+
+# Grid System
+
+&nbsp;
+
+## Basic Grid
+
+<TypographyShowcase>
+    <div className="grid">
+        <div className="grid__item">Full width item (12 columns)</div>
+        <div className="grid__item">Full width item (12 columns)</div>
+        <div className="grid__item">Full width item (12 columns)</div>
+    </div>
+</TypographyShowcase>
+
+### Available Classes
+- `.grid`: Creates a 12-column grid container
+- `.grid__item`: Grid item that spans full width by default
+
+## Grid Gaps
+
+<TypographyShowcase>
+    <div className="grid grid--no-gap">
+        <div className="grid__item">No gap between items</div>
+        <div className="grid__item">No gap between items</div>
+    </div>
+    <div className="grid grid--gap-sm">
+        <div className="grid__item">Small gap between items</div>
+        <div className="grid__item">Small gap between items</div>
+    </div>
+    <div className="grid grid--gap-lg">
+        <div className="grid__item">Large gap between items</div>
+        <div className="grid__item">Large gap between items</div>
+    </div>
+</TypographyShowcase>
+
+### Available Classes
+- `.grid--no-gap`: Removes gap between grid items
+- `.grid--gap-sm`: Small gap between grid items
+- `.grid--gap-lg`: Large gap between grid items
+
+## Responsive Grid Items
+
+<TypographyShowcase>
+    <div className="grid">
+        <div className="grid__item grid__item--sm-6 grid__item--md-4 grid__item--lg-3">
+            Responsive item (12 columns on mobile, 6 on small screens, 4 on medium, 3 on large)
+        </div>
+        <div className="grid__item grid__item--sm-6 grid__item--md-4 grid__item--lg-3">
+            Responsive item (12 columns on mobile, 6 on small screens, 4 on medium, 3 on large)
+        </div>
+        <div className="grid__item grid__item--sm-6 grid__item--md-4 grid__item--lg-3">
+            Responsive item (12 columns on mobile, 6 on small screens, 4 on medium, 3 on large)
+        </div>
+        <div className="grid__item grid__item--sm-6 grid__item--md-4 grid__item--lg-3">
+            Responsive item (12 columns on mobile, 6 on small screens, 4 on medium, 3 on large)
+        </div>
+    </div>
+</TypographyShowcase>
+
+### Available Classes
+
+#### Small Screens (sm)
+- `.grid__item--sm-1` through `.grid__item--sm-12`: Span 1 to 12 columns on small screens
+
+#### Medium Screens (md)
+- `.grid__item--md-1` through `.grid__item--md-12`: Span 1 to 12 columns on medium screens
+
+#### Large Screens (lg)
+- `.grid__item--lg-1` through `.grid__item--lg-12`: Span 1 to 12 columns on large screens
+
+## Example Layouts
+
+<TypographyShowcase>
+    <div className="grid">
+        <div className="grid__item grid__item--md-8">
+            Main content (8 columns)
+        </div>
+        <div className="grid__item grid__item--md-4">
+            Sidebar (4 columns)
+        </div>
+    </div>
+</TypographyShowcase>
+
+<TypographyShowcase>
+    <div className="grid">
+        <div className="grid__item grid__item--sm-12 grid__item--md-4">
+            Column 1 (4 columns)
+        </div>
+        <div className="grid__item grid__item--sm-12 grid__item--md-4">
+            Column 2 (4 columns)
+        </div>
+        <div className="grid__item grid__item--sm-12 grid__item--md-4">
+            Column 3 (4 columns)
+        </div>
+    </div>
+</TypographyShowcase>
+
+## Usage Guidelines
+
+1. **Mobile First**: Grid items span full width (12 columns) by default on mobile
+2. **Responsive Breakpoints**:
+   - Small screens (sm): 6 columns per row
+   - Medium screens (md): 4 columns per row
+   - Large screens (lg): 3 columns per row
+3. **Gap Control**: Use gap modifiers to adjust spacing between grid items
+4. **Nested Grids**: Grid items can contain nested grid containers for complex layouts 

@@ -1,0 +1,233 @@
+/* ==========================================================================
+   FORM
+========================================================================== */
+
+.form {
+    &__group {
+        margin-bottom: $spacing-md;
+    }
+
+    &__label {
+        display: inline-block;
+        margin-bottom: $spacing-xs;
+        font-weight: $font-weight-medium;
+    }
+
+    &__control {
+        display: block;
+        width: 100%;
+        padding: $spacing-sm $spacing-md;
+        font-size: $font-size-md;
+        line-height: $line-height-base;
+        color: $color-black;
+        background-color: $color-white;
+        background-clip: padding-box;
+        border: 1px solid $color-medium-gray;
+        border-radius: $border-radius-md;
+        @include transition(border-color, $transition-base);
+        @include transition(box-shadow, $transition-base);
+
+        &:focus {
+            border-color: $color-primary-light;
+            outline: 0;
+            box-shadow: 0 0 0 0.2rem rgba($color-primary, 0.25);
+        }
+
+        &--error {
+            border-color: $color-danger;
+
+            &:focus {
+                border-color: $color-danger;
+                box-shadow: 0 0 0 0.2rem rgba($color-danger, 0.25);
+            }
+        }
+
+        &:disabled,
+        &--disabled {
+            background-color: $color-light-gray;
+            opacity: 1;
+        }
+    }
+
+    &__text {
+        display: block;
+        margin-top: $spacing-xs;
+        font-size: $font-size-sm;
+    }
+
+    &__text--error {
+        color: $color-danger;
+    }
+
+    &__check {
+        position: relative;
+        display: block;
+        padding-left: $spacing-lg;
+        margin-bottom: $spacing-sm;
+
+        &-input {
+            position: absolute;
+            margin-top: 0.3rem;
+            margin-left: -$spacing-lg;
+            width: 1rem;
+            height: 1rem;
+
+            &[type="radio"] {
+                border-radius: 50%;
+            }
+
+            &:checked {
+                background-color: $color-primary;
+                border-color: $color-primary;
+            }
+
+            &:focus {
+                border-color: $color-primary-light;
+                box-shadow: 0 0 0 0.2rem rgba($color-primary, 0.25);
+            }
+
+            &:disabled {
+                background-color: $color-light-gray;
+                border-color: $color-medium-gray;
+            }
+        }
+
+        &-label {
+            margin-bottom: 0;
+            cursor: pointer;
+
+            &:hover {
+                color: $color-primary;
+            }
+        }
+    }
+
+    &__check-inline {
+        display: flex;
+        flex-wrap: wrap;
+        gap: $spacing-md;
+
+        .form__check {
+            margin-bottom: 0;
+        }
+    }
+
+    &__switch {
+        padding-left: 3.5rem;
+
+        .form__switch-input {
+            position: absolute;
+            margin-left: -3.5rem;
+            width: 2.5rem;
+            height: 1.5rem;
+            appearance: none;
+            background-color: $color-light-gray;
+            border: 2px solid $color-medium-gray;
+            border-radius: 1rem;
+            transition: all $transition-base;
+            cursor: pointer;
+
+            &:checked {
+                background-color: $color-primary;
+                border-color: $color-primary;
+
+                &::before {
+                    transform: translateX(1rem);
+                }
+            }
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0.15rem;
+                left: 0.15rem;
+                width: 1rem;
+                height: 1rem;
+                background-color: $color-white;
+                border-radius: 50%;
+                transition: transform $transition-base;
+            }
+
+            &:focus {
+                border-color: $color-primary-light;
+                box-shadow: 0 0 0 0.2rem rgba($color-primary, 0.25);
+            }
+
+            &:disabled {
+                background-color: $color-light-gray;
+                border-color: $color-medium-gray;
+                cursor: not-allowed;
+
+                &::before {
+                    background-color: $color-medium-gray;
+                }
+            }
+        }
+
+        .form__switch-label {
+            cursor: pointer;
+
+            &:hover {
+                color: $color-primary;
+            }
+        }
+    }
+
+    &__number-control {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        
+        .form__control {
+            width: auto;
+            flex: 1;
+            text-align: center;
+            margin: 0 $spacing-xs;
+            padding-left: $spacing-sm;
+            padding-right: $spacing-sm;
+            
+            // Hide default number input spinners
+            &::-webkit-inner-spin-button,
+            &::-webkit-outer-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+            }
+            &[type=number] {
+                -moz-appearance: textfield;
+            }
+        }
+    }
+
+    &__number-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 2.5rem;
+        height: 2.5rem;
+        padding: 0;
+        font-size: $font-size-lg;
+        color: $color-primary;
+        background-color: $color-white;
+        border: 1px solid $color-medium-gray;
+        border-radius: $border-radius-md;
+        cursor: pointer;
+        @include transition(all, $transition-base);
+
+        &:hover:not(:disabled) {
+            background-color: $color-primary;
+            border-color: $color-primary;
+            color: $color-white;
+        }
+
+        &:focus {
+            outline: 0;
+            box-shadow: 0 0 0 0.2rem rgba($color-primary, 0.25);
+        }
+
+        &:disabled {
+            background-color: $color-light-gray;
+            color: $color-medium-gray;
+            cursor: not-allowed;
+        }
+    }
+}

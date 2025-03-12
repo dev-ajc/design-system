@@ -1,0 +1,150 @@
+/* ==========================================================================
+   TYPOGRAPHY
+========================================================================== */
+
+/*
+TABLE OF CONTENTS
+
+1. Heading Classes
+    .heading
+    .heading--h1 through .heading--h6
+   
+2. Text Utility Classes
+    .lead
+    .text-muted
+   
+3. Code Display
+    code
+    pre
+   
+4. Base Element Typography
+    h1-h6
+    body
+    p
+    small
+    blockquote
+*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-top: 0;
+    margin-bottom: $spacing-md;
+    font-weight: $font-weight-bold;
+    font-family: $font-family-secondary;
+    line-height: $line-height-tight;
+}
+
+h1 {
+    font-size: $font-size-4xl;
+}
+
+h2 {
+    font-size: $font-size-3xl;
+}
+
+h3 {
+    font-size: $font-size-2xl;
+}
+
+h4 {
+    font-size: $font-size-xl;
+}
+
+h5 {
+    font-size: $font-size-lg;
+}
+
+h6 {
+    font-size: $font-size-md;
+}
+
+.heading {
+    margin-top: 0;
+    margin-bottom: $spacing-md;
+    font-weight: $font-weight-bold;
+    line-height: $line-height-tight;
+
+    &--h1 {
+        font-size: $font-size-4xl;
+    }
+
+    &--h2 {
+        font-size: $font-size-3xl;
+    }
+
+    &--h3 {
+        font-size: $font-size-2xl;
+    }
+
+    &--h4 {
+        font-size: $font-size-xl;
+    }
+
+    &--h5 {
+        font-size: $font-size-lg;
+    }
+
+    &--h6 {
+        font-size: $font-size-md;
+    }
+}
+
+body {
+  font-family: $font-family-primary;
+  font-size: $font-size-md;
+  line-height: $line-height-base;
+  color: $color-black;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: $spacing-md;
+}
+
+small {
+    font-size: $font-size-sm;
+}
+
+.lead {
+    font-size: $font-size-lg;
+    font-weight: $font-weight-light;
+    line-height: $line-height-loose;
+}
+
+.text-muted {
+    color: $color-dark-gray;
+}
+
+blockquote {
+    margin: 0 0 $spacing-md;
+    padding: $spacing-md $spacing-lg;
+    border-left: 4px solid $color-medium-gray;
+    font-size: $font-size-lg;
+    font-style: italic;
+}
+
+code {
+    font-family: $font-family-monospace;
+    font-size: $font-size-sm;
+    color: $color-danger;
+    background-color: $color-light-gray;
+    padding: 0.2rem 0.4rem;
+    border-radius: $border-radius-sm;
+}
+
+pre {
+    display: block;
+    margin-top: 0;
+    margin-bottom: $spacing-md;
+    overflow: auto;
+    font-family: $font-family-monospace;
+    font-size: $font-size-sm;
+    color: $color-black;
+    background-color: $color-light-gray;
+    padding: $spacing-md;
+    border-radius: $border-radius-md;
+}

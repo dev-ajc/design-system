@@ -1,0 +1,77 @@
+/* ==========================================================================
+   CONTAINER
+========================================================================== */
+
+/*
+TABLE OF CONTENTS:
+
+1. Container
+    .container                - Responsive container with max-width at each breakpoint
+    .container--fluid         - Full-width container with no max-width
+    .container--sm            - Container with max-width fixed at small breakpoint
+    .container--md            - Container with max-width fixed at medium breakpoint
+    .container--lg            - Container with max-width fixed at large breakpoint
+*/
+
+
+.container {
+    width: 100%;
+    padding-right: $spacing-md;
+    padding-left: $spacing-md;
+    margin-right: auto;
+    margin-left: auto;
+
+    @include respond-to($breakpoint-sm) {
+        max-width: 540px;
+    }
+
+    @include respond-to($breakpoint-md) {
+        max-width: 720px;
+    }
+
+    @include respond-to($breakpoint-lg) {
+        max-width: 960px;
+    }
+
+    @include respond-to($breakpoint-xl) {
+        max-width: 1140px;
+    }
+
+    @include respond-to($breakpoint-2xl) {
+        max-width: 1320px;
+    }
+
+    &--fluid {
+        max-width: none;
+    }
+
+    &--sm {
+        @include respond-to($breakpoint-sm) {
+            max-width: 540px;
+        }
+    }
+
+    &--md {
+        @include respond-to($breakpoint-md) {
+            max-width: 720px;
+        }
+    }
+
+    &--lg {
+        @include respond-to($breakpoint-lg) {
+            max-width: 960px;
+        }
+    }
+
+    &--xl {
+        @include respond-to($breakpoint-xl) {
+            max-width: 1140px;
+        }
+    }
+    
+    &--2xl {
+        @include respond-to($breakpoint-2xl) {
+            max-width: 1320px;
+        }
+    }
+}

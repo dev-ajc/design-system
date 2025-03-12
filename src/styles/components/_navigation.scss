@@ -1,0 +1,71 @@
+/* ==========================================================================
+   NAVIGATION
+========================================================================== */
+
+.nav {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+
+    &__item {
+        margin-bottom: 0;
+    }
+
+    &__link {
+        display: block;
+        padding: $spacing-sm $spacing-md;
+        text-decoration: none;
+
+        &:hover,
+        &:focus {
+            text-decoration: none;
+        }
+
+        &--active {
+            color: $color-primary-dark;
+            font-weight: $font-weight-bold;
+        }
+
+        &--disabled {
+            color: $color-medium-gray;
+            pointer-events: none;
+            cursor: default;
+        }
+    }
+
+    /* Nav Variants */
+    &--horizontal {
+        flex-direction: row;
+    }
+
+    &--vertical {
+        flex-direction: column;
+    }
+
+    &--tabs {
+        border-bottom: 1px solid $color-medium-gray;
+
+        .nav__item {
+            margin-bottom: -1px;
+        }
+
+        .nav__link {
+            border: 1px solid transparent;
+            border-top-left-radius: $border-radius-md;
+            border-top-right-radius: $border-radius-md;
+
+            &:hover,
+            &:focus {
+                border-color: $color-light-gray $color-light-gray $color-medium-gray;
+            }
+
+            &--active {
+                color: $color-dark-gray;
+                background-color: $color-white;
+                border-color: $color-medium-gray $color-medium-gray $color-white;
+            }
+        }
+    }
+}

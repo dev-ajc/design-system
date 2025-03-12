@@ -1,0 +1,201 @@
+import { Meta, Story, Canvas } from "@storybook/blocks";
+import '../src/styles/main.scss';
+
+
+<Meta title="Styleguide/Typography" />
+
+# Typography
+
+&nbsp;
+
+## Headers
+
+<div className="typography-showcase">
+    <h1>Heading 1 - The quick brown fox</h1>
+    <h2>Heading 2 - The quick brown fox</h2>
+    <h3>Heading 3 - The quick brown fox</h3>
+    <h4>Heading 4 - The quick brown fox</h4>
+    <h5>Heading 5 - The quick brown fox</h5>
+    <h6>Heading 6 - The quick brown fox</h6>
+</div>
+
+### Available Elements
+- `<h1>`: Main page heading
+- `<h2>`: Section heading
+- `<h3>`: Sub-section heading
+- `<h4>`: Sub-sub-section heading
+- `<h5>`: Minor heading
+- `<h6>`: Smallest heading
+
+
+## Font Sizes
+
+<div className="typography-showcase">
+    <p className="text-xs">Text XS - The quick brown fox (xs)</p>
+    <p className="text-sm">Text SM - The quick brown fox (sm)</p>
+    <p className="text-md">Text MD - The quick brown fox (md)</p>
+    <p className="text-lg">Text LG - The quick brown fox (lg)</p>
+    <p className="text-xl">Text XL - The quick brown fox (xl)</p>
+    <p className="text-2xl">Text 2XL - The quick brown fox (2xl)</p>
+    <p className="text-3xl">Text 3XL - The quick brown fox (3xl)</p>
+    <p className="text-4xl">Text 4XL - The quick brown fox (4xl)</p>
+</div>
+
+### Available Classes
+- `.text-xs`: Extra small text
+- `.text-sm`: Small text
+- `.text-md`: Medium text (default)
+- `.text-lg`: Large text
+- `.text-xl`: Extra large text
+- `.text-2xl`: 2x large text
+- `.text-3xl`: 3x large text
+- `.text-4xl`: 4x large text
+
+```
+<p className="text-xs">Text XS - The quick brown fox (xs)</p>
+<p className="text-sm">Text SM - The quick brown fox (sm)</p>
+<p className="text-md">Text MD - The quick brown fox (md)</p>
+<p className="text-lg">Text LG - The quick brown fox (lg)</p>
+<p className="text-xl">Text XL - The quick brown fox (xl)</p>
+<p className="text-2xl">Text 2XL - The quick brown fox (2xl)</p>
+<p className="text-3xl">Text 3XL - The quick brown fox (3xl)</p>
+<p className="text-4xl">Text 4XL - The quick brown fox (4xl)</p>
+```
+
+## Font Weights
+
+<div className="typography-showcase">
+    <p className="font-weight-light">Light weight text (300)</p>
+    <p className="font-weight-normal">Normal weight text (400)</p>
+    <p className="font-weight-medium">Medium weight text (500)</p>
+    <p className="font-weight-semibold">Semi-bold weight text (600)</p>
+    <p className="font-weight-bold">Bold weight text (700)</p>
+</div>
+
+### Available Classes
+- `.font-weight-light`: Light weight
+- `.font-weight-normal`: Regular weight
+- `.font-weight-medium`: Medium weight
+- `.font-weight-semibold`: Semi-bold weight
+- `.font-weight-bold`: Bold weight
+
+```
+<p className="font-weight-light">Light weight text (300)</p>
+<p className="font-weight-normal">Normal weight text (400)</p>
+<p className="font-weight-medium">Medium weight text (500)</p>
+<p className="font-weight-semibold">Semi-bold weight text (600)</p>
+<p className="font-weight-bold">Bold weight text (700)</p>
+```
+
+## Text Styles
+
+<div className="typography-showcase">
+    <p className="font-italic">Italic text style</p>
+    <p className="font-normal">Normal text style</p>
+    <p className="text-uppercase">Uppercase text transform</p>
+    <p className="text-lowercase">LOWERCASE TEXT TRANSFORM</p>
+    <p className="text-capitalize">capitalize each word</p>
+</div>
+
+### Available Classes
+- `.font-italic`: Italic text
+- `.font-normal`: Normal text style
+- `.text-uppercase`: UPPERCASE TEXT
+- `.text-lowercase`: lowercase text
+- `.text-capitalize`: Capitalize Text
+
+```
+<p className="font-italic">Italic text style</p>
+<p className="font-normal">Normal text style</p>
+<p className="text-uppercase">Uppercase text transform</p>
+<p className="text-lowercase">LOWERCASE TEXT TRANSFORM</p>
+<p className="text-capitalize">capitalize each word</p>
+```
+
+## Line Height
+
+<div className="typography-showcase">
+    <div className="example-box line-height-tight">
+        <p>Tight line height spacing.<br />Multiple lines of text to demonstrate the tight line height spacing in action.</p>
+    </div>
+    <div className="example-box line-height-normal">
+        <p>Normal line height spacing.<br />Multiple lines of text to demonstrate the normal line height spacing in action.</p>
+    </div>
+    <div className="example-box line-height-loose">
+        <p>Loose line height spacing.<br />Multiple lines of text to demonstrate the loose line height spacing in action.</p>
+    </div>
+</div>
+
+### Available Classes
+- `.line-height-tight`: Tight line spacing
+- `.line-height-normal`: Normal line spacing
+- `.line-height-loose`: Loose line spacing
+
+```
+<div className="line-height-tight">
+    <p>Tight line height spacing.<br />Multiple lines of text to demonstrate the tight line height spacing in action.</p>
+</div>
+<div className="line-height-normal">
+    <p>Normal line height spacing.<br />Multiple lines of text to demonstrate the normal line height spacing in action.</p>
+</div>
+<div className="line-height-loose">
+    <p>Loose line height spacing.<br />Multiple lines of text to demonstrate the loose line height spacing in action.</p>
+</div>
+```
+
+## Letter Spacing
+
+<div className="typography-showcase">
+    <p className="tracking-tight">Tight letter spacing example text</p>
+    <p className="tracking-normal">Normal letter spacing example text</p>
+    <p className="tracking-wide">Wide letter spacing example text</p>
+    <p className="tracking-wider">Wider letter spacing example text</p>
+</div>
+
+### Available Classes
+- `.tracking-tight`: Tight letter spacing
+- `.tracking-normal`: Normal letter spacing
+- `.tracking-wide`: Wide letter spacing
+- `.tracking-wider`: Wider letter spacing
+
+## Text Alignment
+
+<div className="typography-showcase">
+    <div className="example-box text-left">Left aligned text</div>
+    <div className="example-box text-center">Center aligned text</div>
+    <div className="example-box text-right">Right aligned text</div>
+    <div className="example-box text-justify">Justified text with multiple lines. This example shows how justified text spreads across the full width of its container.</div>
+</div>
+
+### Available Classes
+- `.text-left`: Left alignment
+- `.text-center`: Center alignment
+- `.text-right`: Right alignment
+- `.text-justify`: Justified text
+
+## Text Utilities
+
+<div className="typography-showcase">
+    <div className="example-box text-nowrap">No wrap text example that should not break into multiple lines</div>
+    <div className="example-box text-truncate">Truncated text example that should show ellipsis when it overflows its container width</div>
+    <div className="example-box text-break">Text break example with a very long word: supercalifragilisticexpialidocious</div>
+</div>
+
+### Available Classes
+- `.text-nowrap`: Prevent text wrapping
+- `.text-truncate`: Truncate overflow with ellipsis
+- `.text-break`: Break words to prevent overflow
+
+<style>
+{`
+  .typography-showcase {
+    margin: 2rem 0;
+  }
+  .example-box {
+    margin: 1rem 0;
+    padding: 1rem;
+    background: #f5f5f5;
+    border-radius: 4px;
+  }
+`}
+</style>

@@ -1,0 +1,160 @@
+/* ==========================================================================
+   HEIGHT UTILITIES
+   ========================================================================== */
+
+/*
+TABLE OF CONTENTS:
+
+1. Fixed Height Utilities
+    .h-0        - Zero height (0)
+    .h-auto     - Auto height
+    .h-full     - Full height (100%)
+    .h-screen   - Screen height (100vh)
+
+2. Specific Pixel Height Utilities
+    .h-1        - 1px height
+    .h-2        - 2px height
+    .h-4        - 4px height
+    .h-8        - 8px height
+    .h-12       - 12px height
+    .h-16       - 16px height
+    .h-24       - 24px height
+    .h-32       - 32px height
+    .h-48       - 48px height
+    .h-64       - 64px height
+    .h-96       - 96px height
+    .h-128      - 128px height
+    .h-256      - 256px height
+    .h-512      - 512px height
+
+3. Percentage Based Height Utilities
+    Halves:
+    .h-1/2      - 50% height
+    
+    Thirds:
+    .h-1/3      - 33.333333% height
+    .h-2/3      - 66.666667% height
+    
+    Quarters:
+    .h-1/4      - 25% height
+    .h-2/4      - 50% height
+    .h-3/4      - 75% height
+    
+    Fifths:
+    .h-1/5      - 20% height
+    .h-2/5      - 40% height
+    .h-3/5      - 60% height
+    .h-4/5      - 80% height
+    
+    Sixths:
+    .h-1/6      - 16.666667% height
+    .h-2/6      - 33.333333% height
+    .h-3/6      - 50% height
+    .h-4/6      - 66.666667% height
+    .h-5/6      - 83.333333% height
+
+4. Responsive Height Utilities
+    Responsive variants available at breakpoints:
+    sm, md, lg, xl
+*/
+
+
+
+// Fixed height utilities
+.h-0 { height: 0 !important; }
+.h-auto { height: auto !important; }
+.h-full { height: 100% !important; }
+.h-screen { height: 100vh !important; }
+
+// Height with specific pixel values
+.h-1 { height: 1px !important; }
+.h-2 { height: 2px !important; }
+.h-4 { height: 4px !important; }
+.h-8 { height: 8px !important; }
+.h-12 { height: 12px !important; }
+.h-16 { height: 16px !important; }
+.h-24 { height: 24px !important; }
+.h-32 { height: 32px !important; }
+.h-48 { height: 48px !important; }
+.h-64 { height: 64px !important; }
+.h-96 { height: 96px !important; }
+.h-128 { height: 128px !important; }
+.h-256 { height: 256px !important; }
+.h-512 { height: 512px !important; }
+
+// Percentage based height utilities
+.h-1\/2 { height: 50% !important; }
+.h-1\/3 { height: 33.333333% !important; }
+.h-2\/3 { height: 66.666667% !important; }
+.h-1\/4 { height: 25% !important; }
+.h-2\/4 { height: 50% !important; }
+.h-3\/4 { height: 75% !important; }
+.h-1\/5 { height: 20% !important; }
+.h-2\/5 { height: 40% !important; }
+.h-3\/5 { height: 60% !important; }
+.h-4\/5 { height: 80% !important; }
+.h-1\/6 { height: 16.666667% !important; }
+.h-2\/6 { height: 33.333333% !important; }
+.h-3\/6 { height: 50% !important; }
+.h-4\/6 { height: 66.666667% !important; }
+.h-5\/6 { height: 83.333333% !important; }
+
+// Responsive height utilities
+@each $breakpoint, $width in (
+  sm: $breakpoint-sm,
+  md: $breakpoint-md,
+  lg: $breakpoint-lg,
+  xl: $breakpoint-xl
+) {
+  @include respond-to($width) {
+    .h-#{$breakpoint}-0 { height: 0 !important; }
+    .h-#{$breakpoint}-auto { height: auto !important; }
+    .h-#{$breakpoint}-full { height: 100% !important; }
+    .h-#{$breakpoint}-screen { height: 100vh !important; }
+    
+    // Responsive percentage based height utilities
+    .h-#{$breakpoint}-1\/2 { height: 50% !important; }
+    .h-#{$breakpoint}-1\/3 { height: 33.333333% !important; }
+    .h-#{$breakpoint}-2\/3 { height: 66.666667% !important; }
+    .h-#{$breakpoint}-1\/4 { height: 25% !important; }
+    .h-#{$breakpoint}-2\/4 { height: 50% !important; }
+    .h-#{$breakpoint}-3\/4 { height: 75% !important; }
+  }
+}
+
+// Min-height utilities
+.min-h-0 { min-height: 0 !important; }
+.min-h-full { min-height: 100% !important; }
+.min-h-screen { min-height: 100vh !important; }
+.min-h-64 { min-height: 64px !important; }
+.min-h-128 { min-height: 128px !important; }
+.min-h-256 { min-height: 256px !important; }
+.min-h-300 { min-height: 300px !important; }
+.min-h-400 { min-height: 400px !important; }
+.min-h-500 { min-height: 500px !important; }
+
+// Max-height utilities
+.max-h-none { max-height: none !important; }
+.max-h-xs { max-height: 320px !important; }
+.max-h-sm { max-height: 384px !important; }
+.max-h-md { max-height: 448px !important; }
+.max-h-lg { max-height: 512px !important; }
+.max-h-xl { max-height: 576px !important; }
+.max-h-2xl { max-height: 672px !important; }
+.max-h-3xl { max-height: 768px !important; }
+.max-h-4xl { max-height: 896px !important; }
+.max-h-full { max-height: 100% !important; }
+.max-h-screen { max-height: 100vh !important; }
+.max-h-screen-half { max-height: 50vh !important; }
+
+// Viewport height utilities
+.h-screen-1\/4 { height: 25vh !important; }
+.h-screen-1\/3 { height: 33.333333vh !important; }
+.h-screen-1\/2 { height: 50vh !important; }
+.h-screen-2\/3 { height: 66.666667vh !important; }
+.h-screen-3\/4 { height: 75vh !important; }
+
+// Height fit classes
+.h-fit { height: fit-content !important; }
+.h-max { height: max-content !important; }
+.h-min { height: min-content !important; }
