@@ -1,0 +1,196 @@
+/* ==========================================================================
+   TABS COMPONENT
+   ========================================================================== */
+
+.Tabs {
+    width: 100%;
+    margin-bottom: $spacing-lg;
+
+    // Tab list (container for tab buttons)
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: -1px;
+        list-style: none;
+        padding: 0;
+        border-bottom: 1px solid $color-medium-gray;
+    }
+
+    // Individual tab button
+    &__tab {
+        display: inline-block;
+        padding: $spacing-sm $spacing-lg;
+        margin-right: $spacing-sm;
+        font-weight: $font-weight-medium;
+        line-height: 1.5;
+        text-align: center;
+        cursor: pointer;
+        background-color: $color-light-gray;
+        border: 1px solid $color-medium-gray;
+        border-bottom: none;
+        border-radius: $border-radius-md $border-radius-md 0 0;
+        @include transition(all, $transition-fast);
+        margin-bottom: 0;
+
+        &:hover {
+            background-color: darken($color-light-gray, 5%);
+        }
+
+        &--active {
+            color: $color-primary;
+            background-color: $color-white;
+            margin-bottom: -1px;
+        }
+
+        @media (max-width: $breakpoint-md) {
+            font-size: $font-size-sm;
+            padding: $spacing-sm $spacing-md;
+            margin-right: $spacing-xs;
+        }
+
+        @media (max-width: $breakpoint-sm) {
+            flex: 1 0 auto;
+            margin-bottom: $spacing-xs;
+            border-bottom: 1px solid $color-medium-gray;
+            border-radius: $border-radius-md;
+
+            &--active {
+                border-bottom: 1px solid $color-primary;
+            }
+        }
+    }
+
+    // Tab content container
+    &__content {
+        background-color: $color-white;
+        border: 1px solid $color-medium-gray;
+        border-radius: 0 0 $border-radius-md $border-radius-md;
+        padding: $spacing-lg;
+
+        @media (max-width: $breakpoint-sm) {
+            border-top: 1px solid $color-medium-gray;
+            border-radius: $border-radius-md;
+            padding: $spacing-md;
+        }
+    }
+
+    // Mobile accordion style
+    &--accordion {
+        @media (max-width: $breakpoint-md) {
+            .Tabs__list {
+                display: block;
+                border-bottom: none;
+            }
+
+            .Tabs__tab {
+                display: block;
+                width: 100%;
+                margin-right: 0;
+                margin-bottom: 1px;
+                text-align: left;
+                border: 1px solid $color-medium-gray;
+                border-radius: $border-radius-md;
+
+                &--active {
+                    border-bottom: 1px solid $color-medium-gray;
+                    border-radius: $border-radius-md $border-radius-md 0 0;
+                }
+            }
+
+            .Tabs__content {
+                display: none;
+
+                &--active {
+                    display: block;
+                }
+            }
+
+            .Tabs__content--active {
+                border-top: none;
+                border-radius: 0 0 $border-radius-md $border-radius-md;
+            }
+        }
+    }
+
+    // Variations
+    &--primary {
+        .Tabs__tab--active {
+            color: $color-primary;
+            border-bottom-color: $color-primary;
+        }
+    }
+
+    &--secondary {
+        .Tabs__tab--active {
+            color: $color-secondary;
+            border-bottom-color: $color-secondary;
+        }
+    }
+
+    &--tertiary {
+        .Tabs__tab--active {
+            color: $color-tertiary;
+            border-bottom-color: $color-tertiary;
+        }
+    }
+
+    &--vertical {
+        display: flex;
+        flex-wrap: wrap;
+
+        .Tabs__list {
+            flex-direction: column;
+            border-bottom: none;
+            border-right: 1px solid $color-medium-gray;
+            width: 200px;
+            margin-right: -1px;
+            margin-bottom: 0;
+        }
+
+        .Tabs__tab {
+            margin-right: 0;
+            border: 1px solid $color-medium-gray;
+            border-right: none;
+            border-radius: $border-radius-md 0 0 $border-radius-md;
+
+            &--active {
+                border-right: 1px solid $color-white;
+                margin-right: -1px;
+                z-index: 0;
+            }
+        }
+
+        .Tabs__content {
+            flex: 1;
+            border-top: 1px solid $color-medium-gray;
+            border-radius: 0 $border-radius-md $border-radius-md $border-radius-md;
+        }
+
+        @media (max-width: $breakpoint-md) {
+            flex-direction: column;
+
+            .Tabs__list {
+                width: 100%;
+                border-right: none;
+                border-bottom: 1px solid $color-medium-gray;
+                margin-right: 0;
+            }
+
+            .Tabs__tab {
+                border: 1px solid $color-medium-gray;
+                border-radius: $border-radius-md $border-radius-md 0 0;
+                border-bottom: none;
+
+                &--active {
+                    border-right: 1px solid $color-medium-gray;
+                    border-bottom: 1px solid $color-white;
+                    margin-bottom: -1px;
+                }
+            }
+
+            .Tabs__content {
+                border-radius: 0 0 $border-radius-md $border-radius-md;
+            }
+        }
+    }
+}

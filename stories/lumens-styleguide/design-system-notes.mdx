@@ -1,0 +1,31 @@
+import { Meta } from '@storybook/addon-docs';
+
+
+<Meta title="Design System/Notes" />
+
+# Notes
+
+&nbsp;
+
+## SVG
+
+When working with SVG files, it's important to note that Salesforce uses svg-sprite-loader which processes multiple SVG files into a map. This approach optimizes SVG usage by bundling them together.
+To use a single SVG in your application:
+
+1. Place your SVG file in the `src/assets/svg` directory
+2. Change the file extension from `.svg` to `.svgx`
+3. Import the SVG in your component with:
+
+```jsx
+import SvgSample from '@/assets/svg/svg-sample.svgx?lms'
+
+// Usage
+const SamplePanel = () => (
+    <div>
+        <SvgSample />
+    </div>
+);
+```
+
+
+The `?lms` query parameter is crucial as it's required by webpack to properly recognize and process the SVG file. Without this parameter, webpack won't correctly handle the SVG import.

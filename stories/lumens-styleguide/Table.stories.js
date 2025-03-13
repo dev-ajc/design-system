@@ -2,7 +2,7 @@ import React from 'react';
 
 
 export default {
-    title: 'Styleguide/Table',
+    title: 'Styleguide/Tables/Table',
     tags: ['autodocs'],
     parameters: {
         componentSubtitle: 'Tables for displaying structured data',
