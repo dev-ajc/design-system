@@ -1,0 +1,260 @@
+/* ==========================================================================
+   RANGE SLIDER COMPONENT
+========================================================================== */
+
+
+.RangeSlider {
+    width: 100%;
+    padding: $spacing-sm 0;
+    position: relative;
+
+    // Track container
+    &__track {
+        position: relative;
+        height: 6px;
+        background-color: $color-light-gray;
+        border-radius: $border-radius-full;
+        margin: $spacing-sm 0;
+        cursor: pointer;
+        overflow: hidden;
+    }
+
+    // Filled part of track
+    &__fill {
+        position: absolute;
+        height: 100%;
+        left: 0;
+        top: 0;
+        background-color: $color-primary;
+        border-radius: $border-radius-full;
+        pointer-events: none;
+    }
+
+    // Native range input (visually hidden but accessible)
+    &__input {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        margin: 0;
+        cursor: pointer;
+
+        // Custom thumb for browsers that support it
+        &::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 18px;
+            height: 18px;
+            background: $color-white;
+            border: 2px solid $color-primary;
+            border-radius: 50%;
+            cursor: pointer;
+            position: relative;
+            z-index: 2;
+        }
+        
+        &::-moz-range-thumb {
+            width: 18px;
+            height: 18px;
+            background: $color-white;
+            border: 2px solid $color-primary;
+            border-radius: 50%;
+            cursor: pointer;
+            position: relative;
+            z-index: 2;
+        }
+    }
+
+    // Min/Max and current value labels
+    &__labels {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: $font-size-sm;
+        color: $color-dark-gray;
+        margin-bottom: $spacing-xs;
+    }
+
+    &__label {
+        flex: 0 0 auto;
+    }
+
+    &__value {
+        font-weight: $font-weight-medium;
+        color: $color-black;
+        background-color: $color-light-gray;
+        padding: $spacing-xs $spacing-sm;
+        border-radius: $border-radius-sm;
+    }
+
+    &__value-container {
+        display: flex;
+        justify-content: center;
+        margin-top: $spacing-xs;
+    }
+
+    // Variants
+    &--primary {
+        .RangeSlider__fill {
+            background-color: $color-primary;
+        }
+        .RangeSlider__input {
+            &::-webkit-slider-thumb {
+                border-color: $color-primary;
+            }
+            &::-moz-range-thumb {
+                border-color: $color-primary;
+            }
+        }
+    }
+
+    &--secondary {
+        .RangeSlider__fill {
+            background-color: $color-secondary;
+        }
+        .RangeSlider__input {
+            &::-webkit-slider-thumb {
+                border-color: $color-secondary;
+            }
+            &::-moz-range-thumb {
+                border-color: $color-secondary;
+            }
+        }
+    }
+
+    &--tertiary {
+        .RangeSlider__fill {
+            background-color: $color-tertiary;
+        }
+        .RangeSlider__input {
+            &::-webkit-slider-thumb {
+                border-color: $color-tertiary;
+            }
+            &::-moz-range-thumb {
+                border-color: $color-tertiary;
+            }
+        }
+    }
+
+    &--success {
+        .RangeSlider__fill {
+            background-color: $color-success;
+        }
+        .RangeSlider__input {
+            &::-webkit-slider-thumb {
+                border-color: $color-success;
+            }
+            &::-moz-range-thumb {
+                border-color: $color-success;
+            }
+        }
+    }
+
+    &--danger {
+        .RangeSlider__fill {
+            background-color: $color-danger;
+        }
+        .RangeSlider__input {
+            &::-webkit-slider-thumb {
+                border-color: $color-danger;
+            }
+            &::-moz-range-thumb {
+                border-color: $color-danger;
+            }
+        }
+    }
+
+    &--warning {
+        .RangeSlider__fill {
+            background-color: $color-warning;
+        }
+        .RangeSlider__input {
+            &::-webkit-slider-thumb {
+                border-color: $color-warning;
+            }
+            &::-moz-range-thumb {
+                border-color: $color-warning;
+            }
+        }
+    }
+
+    &--info {
+        .RangeSlider__fill {
+            background-color: $color-info;
+        }
+        .RangeSlider__input {
+            &::-webkit-slider-thumb {
+                border-color: $color-info;
+            }
+            &::-moz-range-thumb {
+                border-color: $color-info;
+            }
+        }
+    }
+
+    // Sizes
+    &--small {
+        .RangeSlider__track {
+            height: 4px;
+        }
+        .RangeSlider__input {
+            &::-webkit-slider-thumb {
+                width: 14px;
+                height: 14px;
+            }
+            &::-moz-range-thumb {
+                width: 14px;
+                height: 14px;
+            }
+        }
+        .RangeSlider__value {
+            font-size: $font-size-xs;
+            padding: $spacing-xs $spacing-xs;
+        }
+    }
+
+    &--large {
+        .RangeSlider__track {
+            height: 8px;
+        }
+        .RangeSlider__input {
+            &::-webkit-slider-thumb {
+                width: 24px;
+                height: 24px;
+            }
+            &::-moz-range-thumb {
+                width: 24px;
+                height: 24px;
+            }
+        }
+        .RangeSlider__value {
+            font-size: $font-size-md;
+            padding: $spacing-xs $spacing-md;
+        }
+    }
+
+    // Disabled state
+    &--disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+        
+        .range-slider__track,
+        .range-slider__input {
+            cursor: not-allowed;
+        }
+    }
+
+    // Focused state
+    .RangeSlider__input:focus {
+        outline: none;
+
+        &::-webkit-slider-thumb {
+            box-shadow: 0 0 0 3px rgba($color-primary, 0.3);
+        }
+        
+        &::-moz-range-thumb {
+            box-shadow: 0 0 0 3px rgba($color-primary, 0.3);
+        }
+    }
+}

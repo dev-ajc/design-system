@@ -1,0 +1,194 @@
+/* ==========================================================================
+   MODAL COMPONENT
+========================================================================== */
+
+
+.Modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: $z-index-modal;
+    opacity: 0;
+    visibility: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: $spacing-md;
+    @include transition(opacity, $transition-base);
+
+    &--open {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    &--closing {
+        opacity: 0;
+        visibility: visible;
+    }
+
+    // Backdrop overlay
+    &__backdrop {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: rgba($color-black, 0.5);
+        z-index: $z-index-modal-backdrop;
+    }
+
+    // Main container
+    &__container {
+        position: relative;
+        width: 100%;
+        max-width: 600px; // Default size
+        margin: auto;
+        z-index: $z-index-modal;
+        @include transition(transform, $transition-base);
+        transform: translateY(0);
+        max-height: calc(100vh - #{$spacing-xl * 2});
+        display: flex;
+        flex-direction: column;
+
+        .modal--closing & {
+            transform: translateY(20px);
+        }
+    }
+
+    // Modal content
+    &__content {
+        background-color: $color-white;
+        border-radius: $border-radius-md;
+        box-shadow: $shadow-lg;
+        display: flex;
+        flex-direction: column;
+        max-height: 100%;
+    }
+
+    // Modal header
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: $spacing-md $spacing-lg;
+        border-bottom: 1px solid $color-light-gray;
+    }
+
+    // Modal title
+    &__title {
+        margin: 0;
+        font-size: $font-size-xl;
+        font-weight: $font-weight-semibold;
+        color: $color-black;
+    }
+
+    // Close button
+    &__close {
+        background: transparent;
+        border: none;
+        font-size: $font-size-2xl;
+        line-height: 1;
+        cursor: pointer;
+        color: $color-dark-gray;
+        padding: $spacing-xs;
+        margin: -$spacing-xs;
+        transition: color $transition-fast;
+
+        &:hover {
+            color: $color-danger;
+        }
+    }
+
+    // Modal body
+    &__body {
+        padding: $spacing-lg;
+        overflow-y: auto;
+        flex: 1 1 auto;
+    }
+
+    // Modal footer
+    &__footer {
+        padding: $spacing-md $spacing-lg;
+        border-top: 1px solid $color-light-gray;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: $spacing-md;
+    }
+
+    // Size variants
+    &--small &__container {
+        max-width: 400px;
+    }
+
+    &--medium &__container {
+        max-width: 600px;
+    }
+
+    &--large &__container {
+        max-width: 800px;
+    }
+
+    &--fullscreen {
+        padding: 0;
+
+        .modal__container {
+            max-width: none;
+            width: 100%;
+            height: 100vh;
+            max-height: 100vh;
+            border-radius: 0;
+        }
+
+        .modal__content {
+            border-radius: 0;
+            height: 100%;
+        }
+    }
+}
+
+// Helper class for body when modal is open
+body.modal-open {
+    overflow: hidden;
+}
+
+// Responsive adjustments
+@media (max-width: $breakpoint-md) {
+    .Modal {
+        padding: $spacing-sm;
+
+        &__container {
+            max-height: calc(100vh - #{$spacing-lg * 2});
+        }
+
+        &__header {
+            padding: $spacing-md;
+        }
+
+        &__body {
+            padding: $spacing-md;
+        }
+
+        &__footer {
+            padding: $spacing-sm $spacing-md;
+        }
+    }
+}
+
+@media (max-width: $breakpoint-sm) {
+    .Modal {
+        padding: $spacing-xs;
+
+        &--small &__container,
+        &--medium &__container,
+        &--large &__container {
+            max-width: 100%;
+        }
+    }
+}
