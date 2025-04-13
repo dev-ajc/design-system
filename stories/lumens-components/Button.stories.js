@@ -45,27 +45,48 @@ Secondary.args = {
     variant: 'secondary',
 };
 
-export const Outline = Template.bind({});
-Outline.args = {
-    children: 'Outline Button',
-    variant: 'outline',
+export const Micro = Template.bind({});
+Micro.args = {
+    children: 'Micro Button',
+    variant: 'micro',
 };
 
-export const Small = Template.bind({});
-Small.args = {
-    children: 'Small Button',
-    size: 'small',
+export const Inline = Template.bind({});
+Inline.args = {
+    children: 'Inline Button',
+    variant: 'inline',
 };
 
-export const Large = Template.bind({});
-Large.args = {
-    children: 'Large Button',
-    size: 'large',
+export const Icon = Template.bind({});
+Icon.args = {
+    children: 'Icon Button',
+    variant: 'icon',
 };
 
-export const FullWidth = Template.bind({});
-FullWidth.args = {
-    children: 'Full Width Button',
-    size: 'large',
-    fullWidth: true,
-};
+
+
+// TODO: Disable for now
+// export const Outline = Template.bind({});
+// Outline.args = {
+//     children: 'Outline Button',
+//     variant: 'outline',
+// };
+
+// export const Small = Template.bind({});
+// Small.args = {
+//     children: 'Small Button',
+//     size: 'small',
+// };
+
+// export const Large = Template.bind({});
+// Large.args = {
+//     children: 'Large Button',
+//     size: 'large',
+// };
+
+// export const FullWidth = Template.bind({});
+// FullWidth.args = {
+//     children: 'Full Width Button',
+//     size: 'large',
+//     fullWidth: true,
+// };

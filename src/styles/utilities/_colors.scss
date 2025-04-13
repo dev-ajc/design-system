@@ -3,6 +3,17 @@
    ========================================================================== */
 
 // Text colors
+.text-white { color: $color-white !important; }
+.text-extra-light { color: $color-extra-light !important; }
+.text-medium-light { color: $color-medium-light !important; }
+.text-light { color: $color-light !important; }
+.text-dark { color: $color-dark !important; }
+.text-medium-dark { color: $color-medium-dark !important; }
+.text-extra-dark { color: $color-extra-dark !important; }
+.text-light-rule { color: $color-light-rule !important; }
+.text-dark-rule { color: $color-dark-rule !important; }
+.text-accent { color: $color-accent !important; }
+
 .text-primary { color: $color-primary !important; }
 .text-primary-light { color: $color-primary-light !important; }
 .text-primary-dark { color: $color-primary-dark !important; }
@@ -28,6 +39,17 @@
 .text-muted { color: $color-dark-gray !important; }
 
 // Background colors
+.bg-white { background-color: $color-white !important; }
+.bg-extra-light { background-color: $color-extra-light !important; }
+.bg-medium-light { background-color: $color-medium-light !important; }
+.bg-light { background-color: $color-light !important; }
+.bg-dark { background-color: $color-dark !important; }
+.bg-medium-dark { background-color: $color-medium-dark !important; }
+.bg-extra-dark { background-color: $color-extra-dark !important; }
+.bg-light-rule { background-color: $color-light-rule !important; }
+.bg-dark-rule { background-color: $color-dark-rule !important; }
+.bg-accent { background-color: $color-accent !important; }
+
 .bg-primary { background-color: $color-primary !important; }
 .bg-primary-light { background-color: $color-primary-light !important; }
 .bg-primary-dark { background-color: $color-primary-dark !important; }
@@ -59,3 +81,13 @@
 .border-success { border-color: $color-success !important; }
 .border-danger { border-color: $color-danger !important; }
 
+.border-white { border-color: $color-white !important; }
+.border-extra-light { border-color: $color-extra-light !important; }
+.border-medium-light { border-color: $color-medium-light !important; }
+.border-light { border-color: $color-light !important; }
+.border-dark { border-color: $color-dark !important; }
+.border-medium-dark { border-color: $color-medium-dark !important; }
+.border-extra-dark { border-color: $color-extra-dark !important; }
+.border-light-rule { border-color: $color-light-rule !important; }
+.border-dark-rule { border-color: $color-dark-rule !important; }
+.border-accent { border-color: $color-accent !important; }

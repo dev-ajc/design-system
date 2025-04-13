@@ -39,27 +39,31 @@ h6 {
 }
 
 h1 {
-    font-size: $font-size-4xl;
+    font-size: $font-size-xxl;
+    letter-spacing: -5%;
+    line-height: 100%;
+    font-weight: $font-weight-header;
 }
 
 h2 {
-    font-size: $font-size-3xl;
+    font-size: $font-size-xl;
+    letter-spacing: -3%;
+    line-height: 100%;
+    font-weight: $font-weight-header;
 }
 
 h3 {
-    font-size: $font-size-2xl;
+    font-size: $font-size-lg;
+    letter-spacing: -1%;
+    line-height: 100%;
+    font-weight: $font-weight-header;
 }
 
 h4 {
-    font-size: $font-size-xl;
-}
-
-h5 {
-    font-size: $font-size-lg;
-}
-
-h6 {
     font-size: $font-size-md;
+    letter-spacing: -1%;
+    line-height: 100%;
+    font-weight: $font-weight-header;
 }
 
 .heading {
@@ -69,35 +73,40 @@ h6 {
     line-height: $line-height-tight;
 
     &--h1 {
-        font-size: $font-size-4xl;
+        font-size: $font-size-xxl;
+        letter-spacing: -5%;
+        line-height: 100%;
+        font-weight: $font-weight-header;
     }
 
     &--h2 {
-        font-size: $font-size-3xl;
+        font-size: $font-size-xl;
+        letter-spacing: -3%;
+        line-height: 100%;
+        font-weight: $font-weight-header;
     }
 
     &--h3 {
-        font-size: $font-size-2xl;
+        font-size: $font-size-lg;
+        letter-spacing: -1%;
+        line-height: 100%;
+        font-weight: $font-weight-header;
     }
 
     &--h4 {
-        font-size: $font-size-xl;
-    }
-
-    &--h5 {
-        font-size: $font-size-lg;
-    }
-
-    &--h6 {
         font-size: $font-size-md;
+        letter-spacing: -1%;
+        line-height: 100%;
+        font-weight: $font-weight-header;
     }
 }
 
 body {
   font-family: $font-family-primary;
-  font-size: $font-size-md;
+  font-size: $font-size-sm;
   line-height: $line-height-base;
-  color: $color-black;
+  color: $color-extra-dark;
+  font-weight: $font-weight-regular;
 }
 
 p {
@@ -107,6 +116,12 @@ p {
 
 small {
     font-size: $font-size-sm;
+}
+
+caption {
+    font-size: $font-size-xs;
+    font-weight: $font-weight-regular;
+    display: inline;
 }
 
 .lead {

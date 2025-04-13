@@ -15,6 +15,7 @@ export default {
       codeText: 'Code text',
       linkText: 'Link text',
       blockquoteText: 'Blockquote text',
+      captionText: 'Caption text',
       preText: 'Pre text',
   },
 }
@@ -26,8 +27,6 @@ export const Headers = ({
     <h2>{headingText} 2</h2>
     <h3>{headingText} 3</h3>
     <h4>{headingText} 4</h4>
-    <h5>{headingText} 5</h5>
-    <h6>{headingText} 6</h6>
 </div>)
 
 export const TextElements = ({
@@ -40,6 +39,7 @@ export const TextElements = ({
   codeText = 'Code text',
   linkText = 'Link text',
   blockquoteText = 'Blockquote text',
+  captionText = 'Caption text',
   preText = 'Pre text',
 }) => (<div>
     <p>{paragraphText}</p> 
@@ -51,6 +51,7 @@ export const TextElements = ({
     <p><code>{codeText}</code></p>
     <p><a href="#">{linkText}</a></p>
     <blockquote>{blockquoteText}</blockquote>
+    <p><caption>{captionText}</caption></p>
     <pre>{preText}</pre>
 </div>)
 
@@ -62,8 +63,6 @@ export const TextSizes = () => (
         <p className="text-md">Medium Text</p>
         <p className="text-lg">Large Text</p>
         <p className="text-xl">Extra Large Text</p>
-        <p className="text-2xl">2X Large Text</p>
-        <p className="text-3xl">3X Large Text</p>
-        <p className="text-4xl">4X Large Text</p>
+        <p className="text-xxl">2X Large Text</p>
     </div>
 )

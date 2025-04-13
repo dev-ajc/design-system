@@ -35,9 +35,7 @@
 .text-md { font-size: $font-size-md !important; }
 .text-lg { font-size: $font-size-lg !important; }
 .text-xl { font-size: $font-size-xl !important; }
-.text-2xl { font-size: $font-size-2xl !important; }
-.text-3xl { font-size: $font-size-3xl !important; }
-.text-4xl { font-size: $font-size-4xl !important; }
+.text-xxl { font-size: $font-size-xxl !important; }
 
 // Line height
 .line-height-tight { line-height: $line-height-tight !important; }
@@ -49,3 +47,18 @@
 .tracking-normal { letter-spacing: $letter-spacing-normal !important; }
 .tracking-wide { letter-spacing: $letter-spacing-wide !important; }
 .tracking-wider { letter-spacing: $letter-spacing-wider !important; }
+
+// Text
+.typography-xs {
+    font-size: $font-size-xs;
+    line-height: $line-height-tight;
+    letter-spacing: $letter-spacing-wide;
+    text-transform: uppercase;
+}
+
+.typography-sm {
+    font-size: $font-size-sm;
+    line-height: $line-height-base;
+    font-weight: $font-weight-regular;
+}
+

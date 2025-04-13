@@ -1,4 +1,5 @@
 import { Meta, ColorPalette, ColorItem, Typeset } from '@storybook/addon-docs';
+import { getCssVariable } from '../helpers/utils';
 
 <Meta title="Design System/Design Tokens" />
 
@@ -15,6 +16,51 @@ import { Meta, ColorPalette, ColorItem, Typeset } from '@storybook/addon-docs';
 &nbsp;
 
 <ColorPalette>
+  <ColorItem 
+    title="White" 
+    subtitle="$color-white" 
+    colors={{ 
+      '$color-white': '#FFFFFF', 
+    }} 
+  />
+  <ColorItem 
+    title="Light" 
+    subtitle="$color-light" 
+    colors={{ 
+      '$color-medium-light': '#EFF0EB80', 
+      '$color-extra-light': '#EFF0EB', 
+      '$color-light': '#DFE0D2', 
+    }} 
+  />
+  <ColorItem 
+    title="Dark" 
+    subtitle="$color-light" 
+    colors={{ 
+      '$color-medium-dark': '#00000080', 
+      '$color-dark': '#1C1D16', 
+      '$color-extra-dark': '#000000', 
+    }} 
+  />
+  <ColorItem 
+    title="Rule" 
+    subtitle="$color-*-rule" 
+    colors={{ 
+      '$color-light-rule': '#EFF0EB1A', 
+      '$color-dark-rule': '#0000001A',
+    }} 
+  />
+  <ColorItem 
+    title="Accent" 
+    subtitle="$color-accent" 
+    colors={{ 
+      '$color-accent': '#E5572A', 
+    }} 
+  />
+</ColorPalette>
+
+&nbsp;
+
+{/* <ColorPalette>
   <ColorItem 
     title="Primary" 
     subtitle="$color-primary" 
@@ -42,9 +88,9 @@ import { Meta, ColorPalette, ColorItem, Typeset } from '@storybook/addon-docs';
       '$color-tertiary-dark': '#c29d0b' 
     }} 
   />
-</ColorPalette>
+</ColorPalette> */}
 
-### Semantic Colors
+{/* ### Semantic Colors
 
 <ColorPalette>
   <ColorItem 
@@ -57,9 +103,9 @@ import { Meta, ColorPalette, ColorItem, Typeset } from '@storybook/addon-docs';
       '$color-info': '#3498db' 
     }} 
   />
-</ColorPalette>
+</ColorPalette> */}
 
-### Neutral Colors
+{/* ### Neutral Colors
 
 <ColorPalette>
   <ColorItem 
@@ -73,7 +119,7 @@ import { Meta, ColorPalette, ColorItem, Typeset } from '@storybook/addon-docs';
       '$color-white': '#ffffff' 
     }} 
   />
-</ColorPalette>
+</ColorPalette> */}
 
 ## Typography
 
@@ -84,8 +130,8 @@ import { Meta, ColorPalette, ColorItem, Typeset } from '@storybook/addon-docs';
 &nbsp;
 
 ```scss
-$font-family-primary: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-$font-family-secondary: 'Merriweather', Georgia, 'Times New Roman', serif;
+$font-family-primary: 'SupremeLL', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$font-family-secondary: 'ABCArizonaFlare', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $font-family-monospace: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
 ```
 
@@ -105,15 +151,12 @@ $font-weight-bold: 700;
 
 <Typeset
   fontSizes={[
-    '0.75rem', // $font-size-xs
-    '0.875rem', // $font-size-sm
-    '1rem',     // $font-size-md
-    '1.125rem', // $font-size-lg
-    '1.25rem',  // $font-size-xl
-    '1.5rem',   // $font-size-2xl
-    '1.875rem', // $font-size-3xl
-    '2.25rem',  // $font-size-4xl
-    '3rem'      // $font-size-5xl
+    '120px',
+    '80px', 
+    '40px',
+    '24px',
+    '14px',
+    '10px'
   ]}
   fontFamily="'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif"
   fontWeight={400}
@@ -123,16 +166,13 @@ $font-weight-bold: 700;
 &nbsp;
 
 ```scss
-$font-size-base: 16px;
-$font-size-xs: 0.75rem;    // 12px
-$font-size-sm: 0.875rem;   // 14px
-$font-size-md: 1rem;       // 16px
-$font-size-lg: 1.125rem;   // 18px
-$font-size-xl: 1.25rem;    // 20px
-$font-size-2xl: 1.5rem;    // 24px
-$font-size-3xl: 1.875rem;  // 30px
-$font-size-4xl: 2.25rem;   // 36px
-$font-size-5xl: 3rem;      // 48px
+$font-size-base: 14px;
+$font-size-xxl: math.ceil(8.571 * $font-size-base);    // 120px
+$font-size-xl: math.ceil(5.714 * $font-size-base);     // 80px
+$font-size-lg: math.ceil(2.857 * $font-size-base);     // 40px
+$font-size-md: math.ceil(1.714 * $font-size-base);     // 24px
+$font-size-sm: math.ceil(1 * $font-size-base);         // 14px
+$font-size-xs: math.ceil(0.714 * $font-size-base);     // 10px
 ```
 
 ### Line Heights

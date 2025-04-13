@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 
 const Spacer = ({children, className, style}) => (
@@ -12,5 +13,11 @@ const Spacer = ({children, className, style}) => (
         {children}
     </div>
 )
+
+Spacer.propTypes = {
+    children: PropTypes.node,
+    className: PropTypes.string,
+    style: PropTypes.object
+}
 
 export default Spacer

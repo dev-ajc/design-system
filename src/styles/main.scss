@@ -3,3 +3,29 @@
 @import 'layout';
 @import 'components';
 @import 'utilities';
+
+
+
+/* ========================================
+   TEMPORARY STYLES - TO BE REMOVED
+======================================== */
+
+.social_footer {
+    display: flex;
+    flex-direction: row;
+
+    a svg {
+        width: 28px;
+        height: 30px;
+    }
+}
+
+#pagination {
+    width: 120px;
+    height: fit-content;
+    & + div {
+        width: 120px;
+    }
+}
+
+// End of temporary styles

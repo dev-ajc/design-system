@@ -29,25 +29,13 @@ function Buttons({
     primaryButtonText = 'Primary',
     secondaryButtonText = 'Secondary',
     outlineButtonText = 'Outline',
-    smallButtonText = 'Small',
-    largeButtonText = 'Large',
-    blockButtonText = 'Block',
 }) {
     return (<>
         <div className="mb-sm d-flex flex-row gap-sm">
-            <button className="button">{primaryButtonText}</button>
+            <button className="button">Regular Button</button>
             <button className="button button--primary">{primaryButtonText}</button>
             <button className="button button--secondary">{secondaryButtonText}</button>
-            <button className="button button--outline">{outlineButtonText}</button>
-        </div>
-
-        <div className="mb-sm d-flex flex-row gap-sm">
-            <button className="button button--sm">{smallButtonText}</button>
-            <button className="button button--lg">{largeButtonText}</button>
-        </div>
-
-        <div className="mb-sm d-flex flex-row gap-sm">
-            <button className="button button--primary button--block">{blockButtonText}</button>
+            <button className="button button--micro">{outlineButtonText}</button>
         </div>
     </>)
 }

@@ -12,19 +12,19 @@
 
 // Responsive display utilities
 @each $breakpoint, $width in (
-  sm: $breakpoint-sm,
-  md: $breakpoint-md,
-  lg: $breakpoint-lg,
-  xl: $breakpoint-xl
+    sm: $breakpoint-sm,
+    md: $breakpoint-md,
+    lg: $breakpoint-lg,
+    xl: $breakpoint-xl
 ) {
-  @include respond-to($width) {
-    .d-#{$breakpoint}-none { display: none !important; }
-    .d-#{$breakpoint}-inline { display: inline !important; }
-    .d-#{$breakpoint}-inline-block { display: inline-block !important; }
-    .d-#{$breakpoint}-block { display: block !important; }
-    .d-#{$breakpoint}-flex { display: flex !important; }
-    .d-#{$breakpoint}-grid { display: grid !important; }
-  }
+    @include respond-to($width) {
+        .d-#{$breakpoint}-none { display: none !important; }
+        .d-#{$breakpoint}-inline { display: inline !important; }
+        .d-#{$breakpoint}-inline-block { display: inline-block !important; }
+        .d-#{$breakpoint}-block { display: block !important; }
+        .d-#{$breakpoint}-flex { display: flex !important; }
+        .d-#{$breakpoint}-grid { display: grid !important; }
+    }
 }
 
 // Visibility utilities

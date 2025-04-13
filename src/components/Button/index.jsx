@@ -9,15 +9,20 @@ const Button = ({
     fullWidth = false,
     className = '',
     onClick,
+    leftIcon=null,
+    rightIcon=null,
     ...props
 }) => {
-    const baseStyles = 'rounded font-medium transition-colors duration-200';
+    const baseStyles = 'font-medium transition-colors duration-200';
 
     const variants = {
         primary: 'button--primary',
         secondary: 'button--secondary',
         outline: 'button--outline',
         danger: 'button--danger',
+        micro: 'button--micro',
+        inline: 'button--inline',
+        icon: 'button--icon',
     };
 
     const sizes = {
@@ -43,7 +48,9 @@ const Button = ({
             onClick={onClick}
             {...props}
         >
+            {leftIcon && <span className="button__icon button__icon--left">{leftIcon}</span>}
             {children}
+            {rightIcon && <span className="button__icon button__icon--right">{rightIcon}</span>}
         </button>
     );
 };
@@ -56,6 +63,8 @@ Button.propTypes = {
     fullWidth: PropTypes.bool,
     className: PropTypes.string,
     onClick: PropTypes.func,
+    leftIcon: PropTypes.node,
+    rightIcon: PropTypes.node,
 };
 
 export default Button;

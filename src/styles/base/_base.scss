@@ -4,6 +4,18 @@
 
 :root {
     // Brand Colors
+    --color-white: #{$color-white};
+    --color-extra-light: #{$color-extra-light};
+    --color-medium-light: #{$color-medium-light};
+    --color-light: #{$color-light};
+    --color-extra-dark: #{$color-extra-dark};
+    --color-dark: #{$color-dark};
+    --color-medium-dark: #{$color-medium-dark};
+    --color-light-rule: #{$color-light-rule};
+    --color-dark-rule: #{$color-dark-rule};
+    --color-accent: #{$color-accent};
+    // End brand colors
+
     --color-primary: #{$color-primary};
     --color-primary-light: #{$color-primary-light};
     --color-primary-dark: #{$color-primary-dark};
@@ -43,9 +55,9 @@ html {
 
 body {
     font-family: $font-family-primary;
-    font-size: $font-size-md;
+    font-size: $font-size-sm;
     line-height: $line-height-base;
-    color: $color-black;
+    color: $color-extra-dark;
     background-color: $color-white;
     margin: 0;
     padding: 0;

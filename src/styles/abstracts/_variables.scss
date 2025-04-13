@@ -1,10 +1,30 @@
+@use 'sass:math';
+
 /* ==========================================================================
    VARIABLES
 ========================================================================== */
 
 /* Colors
 ========================================================================== */
-$color-primary: #3498db;
+$color-black: #2c3e50;
+$color-dark-gray: #7f8c8d;
+$color-medium-gray: #bdc3c7;
+$color-light-gray: #ecf0f1;
+
+// Brand colors
+$color-white: #ffffff;
+$color-extra-light: #EFF0EB;
+$color-medium-light: rgba($color-extra-light, 0.5);
+$color-light: #DFE0D2;
+$color-extra-dark: $color-black;
+$color-dark: #1C1D16;
+$color-medium-dark: rgba($color-extra-dark, 0.5);
+$color-light-rule: rgba($color-extra-light, 0.1);
+$color-dark-rule: rgba($color-black, 0.1);
+$color-accent: #E5572A;
+// End brand colors
+
+$color-primary: $color-extra-dark;
 $color-primary-light: lighten($color-primary, 15%);
 $color-primary-dark: darken($color-primary, 15%);
 
@@ -16,12 +36,6 @@ $color-tertiary: #f1c40f;
 $color-tertiary-light: lighten($color-tertiary, 15%);
 $color-tertiary-dark: darken($color-tertiary, 15%);
 
-$color-black: #2c3e50;
-$color-dark-gray: #7f8c8d;
-$color-medium-gray: #bdc3c7;
-$color-light-gray: #ecf0f1;
-$color-white: #ffffff;
-
 $color-success: #27ae60;
 $color-warning: #f39c12;
 $color-danger: #e74c3c;
@@ -31,8 +45,8 @@ $color-transparent: transparent;
 
 /* Typography
 ========================================================================== */
-$font-family-primary: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-$font-family-secondary: 'Quicksand', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$font-family-primary: 'SupremeLL', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$font-family-secondary: 'ABCArizonaFlare', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $font-family-monospace: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
 
 $font-weight-light: 300;
@@ -41,38 +55,56 @@ $font-weight-medium: 500;
 $font-weight-semibold: 600;
 $font-weight-bold: 700;
 
-$font-size-base: 16px;
-$font-size-xs: 0.75rem;    // 12px
-$font-size-sm: 0.875rem;   // 14px
-$font-size-md: 1rem;       // 16px
-$font-size-lg: 1.125rem;   // 18px
-$font-size-xl: 1.25rem;    // 20px
-$font-size-2xl: 1.5rem;    // 24px
-$font-size-3xl: 1.875rem;  // 30px
-$font-size-4xl: 2.25rem;   // 36px
-$font-size-5xl: 3rem;      // 48px
+$font-size-base: 14px;
+$font-size-xxl: math.ceil(8.571 * $font-size-base);    // 120px
+$font-size-xl: math.ceil(5.714 * $font-size-base);     // 80px
+$font-size-lg: math.ceil(2.857 * $font-size-base);     // 40px
+$font-size-md: math.ceil(1.714 * $font-size-base);     // 24px
+$font-size-sm: math.ceil(1 * $font-size-base);         // 14px
+$font-size-xs: math.ceil(0.714 * $font-size-base);     // 10px
 
 $line-height-tight: 1.2;
-$line-height-base: 1.5;
+$line-height-base: 1.6;
 $line-height-loose: 1.8;
 
-$letter-spacing-tight: -0.025em;
+$letter-spacing-tight: -0.5em;
 $letter-spacing-normal: 0;
-$letter-spacing-wide: 0.025em;
+$letter-spacing-wide: 0.2em;
 $letter-spacing-wider: 0.05em;
+
+/* Header
+========================================================================== */
+$font-weight-header: 300;
+
 
 /* Spacing
 ========================================================================== */
-$spacing-base: 8px;
-$spacing-xs: $spacing-base * 0.5;    // 4px
-$spacing-sm: $spacing-base;          // 8px
-$spacing-md: $spacing-base * 2;      // 16px
-$spacing-lg: $spacing-base * 3;      // 24px
-$spacing-xl: $spacing-base * 4;      // 32px
-$spacing-2xl: $spacing-base * 6;     // 48px
-$spacing-3xl: $spacing-base * 8;     // 64px
-$spacing-4xl: $spacing-base * 12;    // 96px
-$spacing-5xl: $spacing-base * 16;    // 128px
+$spacing-base: 5px;
+$spacing-xs: $spacing-base * 0.5;                 // 4px
+$spacing-sm: $spacing-base;                       // 8px
+$spacing-md: $spacing-base  * 2;                  // 16px
+$spacing-lg: $spacing-base  * 3;                  // 24px
+$spacing-xl: $spacing-base  * 4;                  // 32px
+$spacing-2xl: $spacing-base * 6;                  // 48px
+$spacing-3xl: $spacing-base * 8;                  // 64px
+$spacing-4xl: $spacing-base * 12;                 // 96px
+$spacing-5xl: $spacing-base * 16;                 // 128px
+
+$spacing-xxs: $spacing-base * 1;                  // 5px
+$spacing-xs: $spacing-base  * 2;                  // 10px
+$spacing-sm: $spacing-base  * 4;                  // 20px
+$spacing-md: $spacing-base  * 8;                  // 40px
+$spacing-lg: $spacing-base  * 12;                 // 60px
+$spacing-xl: $spacing-base  * 16;                 // 80px
+$spacing-xxl: $spacing-base * 24;                 // 120px
+
+$spacing-tablet-mobile-xxs: $spacing-base * 1;    // 5px
+$spacing-tablet-mobile-xs: $spacing-base  * 2;    // 10px
+$spacing-tablet-mobile-sm: $spacing-base  * 4;    // 20px
+$spacing-tablet-mobile-md: $spacing-base  * 6;    // 30px
+$spacing-tablet-mobile-lg: $spacing-base  * 8;    // 40px
+$spacing-tablet-mobile-xl: $spacing-base  * 12;   // 60px
+$spacing-tablet-mobile-xxl: $spacing-base * 18;   // 90px
 
 /* Breakpoints
 ========================================================================== */

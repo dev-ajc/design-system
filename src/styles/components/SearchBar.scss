@@ -1,0 +1,115 @@
+.SearchBar {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+}
+
+.SearchBar__container--desktop {
+    margin: 0 16px;
+    flex-grow: 1;
+    display: none;
+}
+
+.SearchBar__container--mobile {
+    margin-top: 16px;
+    display: none;
+}
+
+.SearchBar__form {
+    position: relative;
+    width: 100%;
+}
+
+.SearchBar__input {
+    width: 100%;
+    padding: 8px 16px;
+    padding-right: 40px;
+    border-radius: 9999px;
+    border: 1px solid #D1D5DB;
+    outline: none;
+}
+
+.SearchBar__input:focus {
+    box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.4);
+}
+
+.SearchBar__button {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #6B7280;
+}
+
+.SearchBar__button:hover {
+    color: #F59E0B;
+}
+
+.SearchBar__suggestions {
+    position: absolute;
+    z-index: 10;
+    margin-top: 4px;
+    width: 100%;
+    background-color: white;
+    border-radius: 6px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid #E5E7EB;
+}
+
+.SearchBar__suggestions-list {
+    padding: 4px 0;
+    margin: 0;
+    list-style: none;
+}
+
+.SearchBar__suggestion-item {
+    padding: 8px 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.SearchBar__suggestion-item:hover {
+    background-color: #FEF3C7;
+}
+
+.SearchBar__suggestion-icon {
+    width: 32px;
+    height: 32px;
+    background-color: #F3F4F6;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 12px;
+}
+
+.SearchBar__suggestion-icon-inner {
+    color: #F59E0B;
+}
+
+.SearchBar__suggestion-text {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.SearchBar__suggestion-category {
+    font-size: 12px;
+    color: #6B7280;
+}
+
+/* Media queries */
+@media (min-width: 768px) {
+    .SearchBar__container--desktop {
+        display: block;
+    }
+}
+
+@media (max-width: 767px) {
+    .SearchBar__container--mobile {
+    display: block;
+    }
+}

@@ -1,0 +1,27 @@
+.NewsTicker {
+    background-color: #F59E0B;
+    color: white;
+    padding: 4px 16px;
+    overflow: hidden;
+}
+
+.NewsTicker__content {
+    display: flex;
+    white-space: nowrap;
+    animation: marquee 20s linear infinite;
+}
+
+.NewsTicker__item {
+    margin: 0 16px;
+    font-size: 14px;
+}
+
+.NewsTicker__dot {
+    margin: 0 8px;
+}
+
+/* Animation keyframes */
+@keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
