@@ -9,6 +9,13 @@
     }
 }
 
+// Max-width breakpoint mixin
+@mixin respond-to-max($breakpoint) {
+    @media (max-width: ($breakpoint - 1)) {
+        @content;
+    }
+}
+
 // Text truncation
 @mixin truncate {
     overflow: hidden;

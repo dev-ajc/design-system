@@ -1,4 +1,5 @@
 import React from 'react';
+import { getCssVariable } from '../../src/styles/utilities/_flex.scss';
 
 export default {
     title: 'Design System/Utility Classes',
@@ -14,27 +15,39 @@ export default {
 // Spacing Utilities
 export const Spacing = () => (
     <div className="sb-example-group">
+        <h4>Spacing Utilities</h4>
+        <div className="d-flex flex-column gap-md">
+            <div className="d-flex flex-column gap-xs">
+                {['xxs', 'xs', 'sm', 'md', 'lg', 'xl', 'xxl'].map((item => (
+                    <div className={`pt-${item} w-full bg-accent`}>
+                        <div style={{ background: 'white' }}>Spacing {item} {getCssVariable(`--spacing-${item}`)}</div>
+                    </div>
+                )))}
+            </div>
+        </div>
+
+
         <h4>Margin Examples</h4>
         <div className="sb-example">
             <div className="d-flex flex-column gap-md">
                 <div style={{ background: '#e0e0ff' }}>Base element</div>
 
-                <div>
+                <div className="d-flex border">
                     <div className="m-md" style={{ background: '#e0e0ff' }}>
-                        All-sides margin (16px)
+                        All-sides margin (md)
                     </div>
                 </div>
 
-                <div className="d-flex">
+                <div className="d-flex border">
                     <div className="mr-md" style={{ background: '#e0e0ff' }}>
-                        Right margin (16px)
+                        Right margin (md)
                     </div>
                     <div style={{ background: '#ffe0e0' }}>Adjacent element</div>
                 </div>
 
-                <div className="d-flex flex-column">
+                <div className="d-flex flex-column border">
                     <div className="mb-md" style={{ background: '#e0e0ff' }}>
-                        Bottom margin (16px)
+                        Bottom margin (md)
                     </div>
                     <div style={{ background: '#ffe0e0' }}>Element below</div>
                 </div>
@@ -53,19 +66,19 @@ export const Spacing = () => (
                 <div style={{ background: '#e0ffe0', padding: '0' }}>No padding</div>
 
                 <div className="p-md" style={{ background: '#e0ffe0' }}>
-                    All-sides padding (16px)
+                    All-sides padding (md)
                 </div>
 
                 <div className="px-md" style={{ background: '#e0ffe0' }}>
-                    Horizontal padding (16px)
+                    Horizontal padding (md)
                 </div>
 
                 <div className="py-md" style={{ background: '#e0ffe0' }}>
-                    Vertical padding (16px)
+                    Vertical padding (md)
                 </div>
 
                 <div className="pt-md" style={{ background: '#e0ffe0' }}>
-                    Top padding (16px)
+                    Top padding (md)
                 </div>
             </div>
         </div>
@@ -73,7 +86,7 @@ export const Spacing = () => (
         <h4>Combined Spacing</h4>
         <div className="sb-example">
             <div className="p-md mb-md" style={{ background: '#e0ffe0', border: '1px solid #ccc' }}>
-                Element with padding (16px) and bottom margin (16px)
+                Element with padding (md) and bottom margin (md)
             </div>
             <div style={{ background: '#e0e0ff', border: '1px solid #ccc' }}>
                 Adjacent element

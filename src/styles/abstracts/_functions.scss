@@ -19,22 +19,27 @@
 // Get spacing value
 @function spacing($key) {
     $spacing-map: (
+        'xxs': $spacing-xxs,
         'xs': $spacing-xs,
         'sm': $spacing-sm,
         'md': $spacing-md,
         'lg': $spacing-lg,
         'xl': $spacing-xl,
-        '2xl': $spacing-2xl,
-        '3xl': $spacing-3xl,
-        '4xl': $spacing-4xl,
-        '5xl': $spacing-5xl
+        'xxl': $spacing-xxl,
+        'tablet-mobile-xxs': $spacing-tablet-mobile-xxs,
+        'tablet-mobile-xs': $spacing-tablet-mobile-xs,
+        'tablet-mobile-sm': $spacing-tablet-mobile-sm,
+        'tablet-mobile-md': $spacing-tablet-mobile-md,
+        'tablet-mobile-lg': $spacing-tablet-mobile-lg,
+        'tablet-mobile-xl': $spacing-tablet-mobile-xl,
+        'tablet-mobile-xxl': $spacing-tablet-mobile-xxl
     );
 
-@if map-has-key($spacing-map, $key) {
-    @return map-get($spacing-map, $key);
-}
+    @if map-has-key($spacing-map, $key) {
+        @return map-get($spacing-map, $key);
+    }
 
-@return $spacing-base;
+    @return $spacing-base;
 }
 
 // Z-index function

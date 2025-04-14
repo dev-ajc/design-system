@@ -88,52 +88,70 @@ TABLE OF CONTENTS:
 
 // Generate spacing utilities for margin and padding
 @each $prop, $abbrev in (margin: m, padding: p) {
-
     @each $size, $value in (0: 0,
+        xxs: $spacing-xxs,
         xs: $spacing-xs,
         sm: $spacing-sm,
         md: $spacing-md,
         lg: $spacing-lg,
         xl: $spacing-xl,
-        2xl: $spacing-2xl,
-        3xl: $spacing-3xl,
-        xxs: $spacing-xxs,
         xxl: $spacing-xxl,
-        tablet-mobile-xxs: $spacing-tablet-mobile-xxs,
-        tablet-mobile-xs: $spacing-tablet-mobile-xs,
-        tablet-mobile-sm: $spacing-tablet-mobile-sm,
-        tablet-mobile-md: $spacing-tablet-mobile-md,
-        tablet-mobile-lg: $spacing-tablet-mobile-lg,
-        tablet-mobile-xl: $spacing-tablet-mobile-xl,
     ) {
         .#{$abbrev}-#{$size} {
             #{$prop}: $value !important;
+            @include respond-to-max($breakpoint-desktop) {
+                #{$prop}: spacing('tablet-mobile-' + $size) !important;
+            }
         }
 
         .#{$abbrev}t-#{$size} {
             #{$prop}-top: $value !important;
+            @include respond-to-max($breakpoint-desktop) {
+                #{$prop}-top: spacing('tablet-mobile-' + $size) !important;
+            }
         }
 
         .#{$abbrev}r-#{$size} {
             #{$prop}-right: $value !important;
+            @include respond-to-max($breakpoint-desktop) {
+                #{$prop}-right: spacing('tablet-mobile-' + $size) !important;
+            }
         }
 
         .#{$abbrev}b-#{$size} {
             #{$prop}-bottom: $value !important;
+            @include respond-to-max($breakpoint-desktop) {
+                #{$prop}-bottom: spacing('tablet-mobile-' + $size) !important;
+            }
         }
 
         .#{$abbrev}l-#{$size} {
             #{$prop}-left: $value !important;
+            @include respond-to-max($breakpoint-desktop) {
+                #{$prop}-left: spacing('tablet-mobile-' + $size) !important;
+            }
         }
 
         .#{$abbrev}x-#{$size} {
             #{$prop}-right: $value !important;
+            @include respond-to-max($breakpoint-desktop) {
+                #{$prop}-right: spacing('tablet-mobile-' + $size) !important;
+            }
             #{$prop}-left: $value !important;
+            @include respond-to-max($breakpoint-desktop) {
+                #{$prop}-left: spacing('tablet-mobile-' + $size) !important;
+            }
         }
 
         .#{$abbrev}y-#{$size} {
             #{$prop}-top: $value !important;
+            @include respond-to-max($breakpoint-desktop) {
+                #{$prop}-top: spacing('tablet-mobile-' + $size) !important;
+            }
             #{$prop}-bottom: $value !important;
+            @include respond-to-max($breakpoint-desktop) {
+                #{$prop}-bottom: spacing('tablet-mobile-' + $size) !important;
+            }
         }
     }
 }

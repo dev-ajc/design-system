@@ -40,6 +40,11 @@
     --color-medium-gray: #{$color-medium-gray};
     --color-light-gray: #{$color-light-gray};
     --color-white: #{$color-white};
+
+    // Breakpoints
+    --breakpoint-tablet: #{$breakpoint-tablet};
+    --breakpoint-mobile: #{$breakpoint-mobile};
+    --breakpoint-desktop: #{$breakpoint-desktop};
 }
 
 html {

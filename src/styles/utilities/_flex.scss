@@ -10,7 +10,7 @@ TABLE OF CONTENTS:
     .flex-column            - Column direction
     .flex-row-reverse       - Row direction reversed
     .flex-column-reverse    - Column direction reversed
-    
+
     Responsive variants:
     .flex-{breakpoint}-row            - Row direction at specific breakpoint
     .flex-{breakpoint}-column         - Column direction at specific breakpoint
@@ -36,7 +36,7 @@ TABLE OF CONTENTS:
     .align-items-end        - Align items to end
     .align-items-stretch    - Stretch items
     .align-items-baseline   - Align items to baseline
-    
+
     .align-self-*           - Same options for individual items
 
 5. Align Content
@@ -55,23 +55,36 @@ TABLE OF CONTENTS:
 8. Gap Utilities
     Base Gaps:
     .gap-0     - No gap (0px)
-    .gap-xs    - Extra small gap (4px)
-    .gap-sm    - Small gap (8px)
-    .gap-md    - Medium gap (16px)
-    .gap-lg    - Large gap (24px)
-    .gap-xl    - Extra large gap (32px)
-    .gap-2xl   - 2x Extra large gap (48px)
-    .gap-3xl   - 3x Extra large gap (64px)
+    .gap-xxs   - Extra extra small gap (5px)
+    .gap-xs    - Extra small gap (10px)
+    .gap-sm    - Small gap (20px)
+    .gap-md    - Medium gap (40px)
+    .gap-lg    - Large gap (60px)
+    .gap-xl    - Extra large gap (80px)
+    .gap-xxl   - Extra extra large gap (120px)
 
     Horizontal Gaps:
     .gap-x-0   - No horizontal gap
+    .gap-x-xxs - Extra extra small horizontal gap
     .gap-x-xs  - Extra small horizontal gap
-    [... continues through gap-x-3xl]
+    .gap-x-sm  - Small horizontal gap
+    .gap-x-md  - Medium horizontal gap
+    .gap-x-lg  - Large horizontal gap
+    .gap-x-xl  - Extra large horizontal gap
+    .gap-x-xxl - Extra extra large horizontal gap
 
     Vertical Gaps:
     .gap-y-0   - No vertical gap
+    .gap-y-xxs - Extra extra small vertical gap
     .gap-y-xs  - Extra small vertical gap
-    [... continues through gap-y-3xl]
+    .gap-y-sm  - Small vertical gap
+    .gap-y-md  - Medium vertical gap
+    .gap-y-lg  - Large vertical gap
+    .gap-y-xl  - Extra large vertical gap
+    .gap-y-xxl - Extra extra large vertical gap
+
+    Note: All gap utilities are responsive and will use tablet-mobile spacing values
+    on screens smaller than desktop breakpoint.
 */
 
 
@@ -151,22 +164,31 @@ TABLE OF CONTENTS:
 
 // Gap
 @each $size, $value in (0: 0,
+    xxs: $spacing-xxs,
     xs: $spacing-xs,
     sm: $spacing-sm,
     md: $spacing-md,
     lg: $spacing-lg,
     xl: $spacing-xl,
-    2xl: $spacing-2xl,
-    3xl: $spacing-3xl) {
+    xxl: $spacing-xxl) {
     .gap-#{$size} {
         gap: $value !important;
+        @include respond-to-max($breakpoint-desktop) {
+            gap: spacing('tablet-mobile-' + $size) !important;
+        }
     }
-    
+
     .gap-x-#{$size} {
         column-gap: $value !important;
+        @include respond-to-max($breakpoint-desktop) {
+            column-gap: spacing('tablet-mobile-' + $size) !important;
+        }
     }
-    
+
     .gap-y-#{$size} {
         row-gap: $value !important;
+        @include respond-to-max($breakpoint-desktop) {
+            row-gap: spacing('tablet-mobile-' + $size) !important;
+        }
     }
 }
